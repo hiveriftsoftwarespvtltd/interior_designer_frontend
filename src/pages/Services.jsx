@@ -166,7 +166,7 @@ function ServicesGrid() {
 
                 {/* Icon Badge Overlapping */}
                 <div className="absolute left-1/2 -translate-x-1/2 -bottom-8 w-[64px] h-[64px] bg-[#050505] rounded-full border-2 border-[#C9A15D] flex items-center justify-center shadow-lg z-10">
-                  <img src={svc.icon} alt="Icon" className="w-[80px] h-[80px] object-contain max-w-none" />
+                  <img src={svc.icon} alt="Icon" className="w-[80px] h-[80px] object-contain max-w-none transition-transform duration-300 group-hover:scale-110" />
                 </div>
               </div>
 
@@ -229,7 +229,7 @@ function TurnkeySection() {
                 <div key={i} className="flex items-center w-full relative">
                   <div className="flex flex-col items-center text-center flex-1 px-1">
                     <div className="relative h-[56px] w-full mb-0">
-                      <img src={step.icon} alt={step.label} className="absolute -bottom-5 left-1/2 -translate-x-1/2 w-[104px] h-[104px] object-contain max-w-none" />
+                      <img src={step.icon} alt={step.label} className="absolute -bottom-5 left-1/2 -translate-x-1/2 w-[104px] h-[104px] object-contain max-w-none transition-transform duration-300 hover:scale-110 cursor-pointer" />
                     </div>
                     <p className="font-sans text-[11px] text-[#e5e5e5] whitespace-pre-line leading-[1.4] font-medium z-10 relative">
                       {step.label}
@@ -277,7 +277,7 @@ function ServicesCta() {
 
           {/* Right: Button */}
           <div className="w-full lg:w-auto flex justify-start lg:justify-end flex-shrink-0">
-            <Link to="/contact" className="border border-[#C9A15D]/60 hover:border-[#C9A15D] px-8 py-3.5 text-[10.5px] font-bold tracking-[0.15em] uppercase text-[#C9A15D] transition-colors duration-300 inline-flex items-center gap-3">
+            <Link to="/contact" className="border border-[#C9A15D] hover:bg-[#C9A15D] hover:text-[#050505] px-8 py-3.5 text-[10.5px] font-bold tracking-[0.15em] uppercase text-[#C9A15D] transition-colors duration-300 inline-flex items-center gap-3 group">
               SCHEDULE CONSULTATION <span className="text-[16px] font-light">&rarr;</span>
             </Link>
           </div>

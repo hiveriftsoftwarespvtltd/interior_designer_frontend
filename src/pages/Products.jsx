@@ -134,7 +134,7 @@ function CategoryGrid() {
 
               {/* Center Top Icon */}
               <div className="absolute top-8 left-1/2 -translate-x-1/2 w-[52px] h-[52px] rounded-full border border-[#C9A15D] bg-[#050505]/60 flex items-center justify-center">
-                <img src={cat.icon} alt="Icon" className="w-[64px] h-[64px] object-contain max-w-none" />
+                <img src={cat.icon} alt="Icon" className="w-[64px] h-[64px] object-contain max-w-none transition-transform duration-300 group-hover:scale-110" />
               </div>
 
               {/* Bottom Left Text */}
@@ -184,7 +184,7 @@ function PremiumAdditions() {
             </div>
             <div className="absolute bottom-6 left-6">
               <div className="w-[56px] h-[56px] rounded-full border border-[#C9A15D] bg-[#050505]/60 flex items-center justify-center mb-4">
-                <img src={kitchenIcon} alt="Kitchen Icon" className="w-[64px] h-[64px] object-contain max-w-none" />
+                <img src={kitchenIcon} alt="Kitchen Icon" className="w-[64px] h-[64px] object-contain max-w-none transition-transform duration-300 hover:scale-110 cursor-pointer" />
               </div>
               <p className="font-sans text-[15px] font-semibold text-[#f0e8d4] whitespace-pre-line leading-[1.3]">
                 Modular Kitchens
@@ -203,7 +203,7 @@ function PremiumAdditions() {
             </div>
             <div className="absolute bottom-6 left-6">
               <div className="w-[56px] h-[56px] rounded-full border border-[#C9A15D] bg-[#050505]/60 flex items-center justify-center mb-4">
-                <img src={wardrobeIcon} alt="Wardrobe Icon" className="w-[64px] h-[64px] object-contain max-w-none" />
+                <img src={wardrobeIcon} alt="Wardrobe Icon" className="w-[64px] h-[64px] object-contain max-w-none transition-transform duration-300 hover:scale-110 cursor-pointer" />
               </div>
               <p className="font-sans text-[15px] font-semibold text-[#f0e8d4] whitespace-pre-line leading-[1.3]">
                 Wardrobes
@@ -233,7 +233,7 @@ function FeaturesBar() {
           {features.map((f, i) => (
             <div key={i} className={`flex flex-col items-center text-center px-4 ${i < 4 ? 'lg:border-r border-[#C9A15D]/20' : ''}`}>
               <div className="relative h-[56px] w-full mb-1">
-                <img src={f.icon} alt={f.label} className="absolute -bottom-5 left-1/2 -translate-x-1/2 w-[132px] object-contain max-w-none" />
+                <img src={f.icon} alt={f.label} className="absolute -bottom-5 left-1/2 -translate-x-1/2 w-[132px] object-contain max-w-none transition-transform duration-300 hover:scale-110 cursor-pointer" />
               </div>
               <p className="font-sans text-[13px] md:text-[14px] font-medium text-[#f0e8d4] whitespace-pre-line leading-[1.4] relative z-10">
                 {f.label}
@@ -277,10 +277,10 @@ function ProductsCta() {
           </p>
           <Link
             to="/contact"
-            className="border border-[#C9A15D]/60 text-[#C9A15D] px-6 py-3 text-[11px] font-bold tracking-[0.15em] uppercase flex items-center gap-3 w-fit hover:bg-[#C9A15D]/10 transition-colors"
+            className="border border-[#C9A15D] text-[#C9A15D] hover:bg-[#C9A15D] hover:text-[#050505] px-6 py-3 text-[11px] font-bold tracking-[0.15em] uppercase flex items-center gap-3 w-fit transition-colors group"
           >
             SCHEDULE A CONSULTATION
-            <ArrowRight size={14} />
+            <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
           </Link>
         </div>
       </div>

@@ -129,23 +129,28 @@ export default function Footer() {
               <h4 className="text-[#C9A15D] text-[10px] tracking-wider uppercase mb-4 font-semibold">Contact Us</h4>
               <ul className="flex flex-col gap-3">
                 <li className="flex items-center gap-4">
-                  <Phone size={14} className="text-[#C9A15D] flex-shrink-0" />
-                  <span className="font-sans text-[12px] text-white/80">+91 98765 43210</span>
+                  <Phone size={14} className="text-[#C9A15D] flex-shrink-0 transition-transform duration-300 hover:scale-110 hover:-translate-y-1 cursor-pointer" />
+                  <span className="font-sans text-[12px] text-white/80">8826607109</span>
                 </li>
                 <li className="flex items-center gap-4">
-                  <Mail size={14} className="text-[#C9A15D] flex-shrink-0" />
-                  <span className="font-sans text-[12px] text-white/80">info@infinityluxespaces.com</span>
+                  <Mail size={14} className="text-[#C9A15D] flex-shrink-0 transition-transform duration-300 hover:scale-110 hover:-translate-y-1 cursor-pointer" />
+                  <span className="font-sans text-[12px] text-white/80">infinityluxespaces@gmail.com</span>
                 </li>
                 <li className="flex items-center gap-4">
-                  <MapPin size={14} className="text-[#C9A15D] flex-shrink-0" />
-                  <span className="font-sans text-[12px] text-white/80">New Delhi, India</span>
+                  <MapPin size={14} className="text-[#C9A15D] flex-shrink-0 transition-transform duration-300 hover:scale-110 hover:-translate-y-1 cursor-pointer" />
+                  <span className="font-sans text-[12px] text-white/80 leading-relaxed">
+                    C-97, Basement,<br />
+                    Sector-33, Noida,<br />
+                    Distt. Gautam Budh Nagar,<br />
+                    Pincode – 201301 (U.P.)
+                  </span>
                 </li>
               </ul>
             </div>
 
             <Link to="/contact" className="mt-8 border border-[#C9A15D]/40 p-4 flex items-center justify-between gap-4 hover:border-[#C9A15D] transition-colors rounded-sm group">
               <div className="flex items-center gap-4">
-                <Armchair size={24} className="text-[#C9A15D]" strokeWidth={1} />
+                <Armchair size={24} className="text-[#C9A15D] transition-transform duration-300 group-hover:scale-110 group-hover:-translate-y-1" strokeWidth={1} />
                 <div className="flex flex-col text-left">
                   <span className="text-[9px] text-[#B6B6B6] tracking-wider uppercase group-hover:text-white transition-colors">Let's Create</span>
                   <span className="text-[10px] text-[#C9A15D] font-semibold tracking-wider uppercase mt-0.5">Something Exceptional</span>

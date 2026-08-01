@@ -66,7 +66,7 @@ export default function Navbar() {
             className="lg:hidden text-gold-primary"
             onClick={() => setMobileOpen(!mobileOpen)}
           >
-            {mobileOpen ? <X size={22} /> : <Menu size={22} />}
+            {mobileOpen ? <X size={22} className="transition-transform duration-300 hover:scale-110 hover:-translate-y-1" /> : <Menu size={22} className="transition-transform duration-300 hover:scale-110 hover:-translate-y-1" />}
           </button>
         </div>
 
@@ -90,7 +90,7 @@ export default function Navbar() {
               onClick={() => setMobileOpen(false)}
               className="btn-outline w-fit mt-2"
             >
-              Let's Talk <ArrowRight size={12} />
+              Let's Talk <ArrowRight size={12} className="transition-transform duration-300 hover:translate-x-1" />
             </Link>
           </div>
         )}

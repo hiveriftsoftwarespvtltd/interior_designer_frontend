@@ -135,28 +135,28 @@ function Hero() {
 const statsData = [
   {
     svgIcon: (
-      <img src={icon25Years} alt="25+ years" className="w-16 md:w-24 h-auto -my-2 md:-my-6" />
+      <img src={icon25Years} alt="25+ years" className="w-16 md:w-24 h-auto -my-2 md:-my-6 transition-transform duration-300 hover:scale-110 cursor-pointer" />
     ),
     value: '25+',
     label: 'Years of Combined\nLeadership Expertise',
   },
   {
     svgIcon: (
-      <img src={iconCategories} alt="10+ categories" className="w-16 md:w-24 h-auto -my-2 md:-my-6" />
+      <img src={iconCategories} alt="10+ categories" className="w-16 md:w-24 h-auto -my-2 md:-my-6 transition-transform duration-300 hover:scale-110 cursor-pointer" />
     ),
     value: '10+',
     label: 'Categories of\nBespoke Craftsmanship',
   },
   {
     svgIcon: (
-      <img src={icon11Clients} alt="11+ clients" className="w-16 md:w-24 h-auto -my-2 md:-my-6" />
+      <img src={icon11Clients} alt="11+ clients" className="w-16 md:w-24 h-auto -my-2 md:-my-6 transition-transform duration-300 hover:scale-110 cursor-pointer" />
     ),
     value: '11+',
     label: 'Prestigious Clients\nAcross Sectors',
   },
   {
     svgIcon: (
-      <img src={iconTurnkey} alt="Turnkey solutions" className="w-16 md:w-24 h-auto -my-2 md:-my-6" />
+      <img src={iconTurnkey} alt="Turnkey solutions" className="w-16 md:w-24 h-auto -my-2 md:-my-6 transition-transform duration-300 hover:scale-110 cursor-pointer" />
     ),
     value: 'Turnkey',
     label: 'End-to-End\nSolutions',
@@ -364,7 +364,7 @@ function ProductsGrid() {
               <div className="absolute inset-0 flex flex-col items-center justify-center p-4 text-center">
                 {/* Icon */}
                 <div className="mb-4 w-16 h-16 rounded-full border-2 border-[#C9A15D] flex items-center justify-center overflow-hidden">
-                  <img src={item.icon} alt={item.title} className="w-full h-full object-cover" />
+                  <img src={item.icon} alt={item.title} className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" />
                 </div>
 
                 {/* Heading */}
@@ -462,7 +462,7 @@ function WhyUs() {
               )}
 
               {/* Custom Image Icon */}
-              <img src={item.icon} alt={item.title} className="w-16 h-16 object-contain scale-[2.2]" />
+              <img src={item.icon} alt={item.title} className="w-16 h-16 object-contain scale-[2.2] transition-transform duration-300 hover:scale-[2.4] cursor-pointer" />
               <h3
                 className="whitespace-pre-line"
                 style={{ fontFamily: '"Montserrat", sans-serif', fontWeight: 600, fontSize: '13px', color: '#C9A15D', lineHeight: 1.4 }}
@@ -542,11 +542,11 @@ function PortfolioPreview() {
           </div>
 
           {/* Left / Right arrows */}
-          <button className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-5 w-9 h-9 border border-gold-border/40 bg-luxury-black/80 flex items-center justify-center text-gold-primary hover:border-gold-primary transition-all z-10">
-            <ChevronLeft size={16} />
+          <button className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-5 w-9 h-9 border border-gold-border/40 bg-luxury-black/80 flex items-center justify-center text-gold-primary hover:bg-gold-primary hover:text-luxury-black transition-all z-10">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M15 18l-6-6 6-6"/></svg>
           </button>
-          <button className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-5 w-9 h-9 border border-gold-border/40 bg-luxury-black/80 flex items-center justify-center text-gold-primary hover:border-gold-primary transition-all z-10">
-            <ChevronRight size={16} />
+          <button className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-5 w-9 h-9 border border-gold-border/40 bg-luxury-black/80 flex items-center justify-center text-gold-primary hover:bg-gold-primary hover:text-luxury-black transition-all z-10">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M9 18l6-6-6-6"/></svg>
           </button>
         </div>
 
@@ -583,27 +583,29 @@ function ClientsStrip() {
           {clientLogos.map((logo, i) => (
             <div
               key={i}
-              className="flex items-center justify-center transition-colors duration-300 group"
+              className="flex items-center justify-center group cursor-pointer"
               style={{ height: '100px' }}
             >
-              <div
-                className="w-full h-full scale-[2.2] bg-[#C9A15D] opacity-80 group-hover:opacity-100 group-hover:scale-[2.5] transition-all duration-700 ease-out flex-shrink-0"
-                style={{
-                  WebkitMaskImage: `url(${logo})`,
-                  maskImage: `url(${logo})`,
-                  WebkitMaskSize: 'contain',
-                  maskSize: 'contain',
-                  WebkitMaskPosition: 'center',
-                  maskPosition: 'center',
-                  WebkitMaskRepeat: 'no-repeat',
-                  maskRepeat: 'no-repeat',
-                }}
-              />
+              <div className="w-full h-full transition-transform duration-500 group-hover:scale-110 group-hover:-translate-y-1">
+                <div
+                  className="w-full h-full scale-[2.2] bg-[#C9A15D] opacity-80 group-hover:opacity-100 transition-opacity duration-500 flex-shrink-0 pointer-events-none"
+                  style={{
+                    WebkitMaskImage: `url(${logo})`,
+                    maskImage: `url(${logo})`,
+                    WebkitMaskSize: 'contain',
+                    maskSize: 'contain',
+                    WebkitMaskPosition: 'center',
+                    maskPosition: 'center',
+                    WebkitMaskRepeat: 'no-repeat',
+                    maskRepeat: 'no-repeat',
+                  }}
+                />
+              </div>
             </div>
           ))}
         </div>
 
-        <div className="flex justify-center mt-7">
+        <div className="flex justify-center mt-7 relative z-10">
           <Link
             to="/clients"
             className="inline-flex items-center font-sans font-semibold text-[10px] tracking-[0.2em] uppercase px-7 py-3 border border-gold-primary text-gold-primary hover:bg-gold-primary hover:text-luxury-black transition-all duration-200"
@@ -670,23 +672,28 @@ function HomeCta() {
 
           {/* Right: Contact info + social */}
           <div className="bg-luxury-black border border-[#C9A15D] p-10 flex flex-col gap-7 lg:ml-4 shadow-2xl relative z-10">
-            
+
             {/* Phone */}
             <div className="flex items-center gap-5">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="#C9A15D" stroke="#C9A15D" strokeWidth="0"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.11h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.72a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 16.92z" /></svg>
-              <span className="font-sans font-medium text-[14px] text-text-secondary">+91 98765 43210</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="#C9A15D" stroke="#C9A15D" strokeWidth="0" className="transition-transform duration-300 hover:scale-110 hover:-translate-y-1 cursor-pointer"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.11h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.72a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 16.92z" /></svg>
+              <span className="font-sans font-medium text-[14px] text-text-secondary">8826607109</span>
             </div>
 
             {/* Email */}
             <div className="flex items-center gap-5">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="#C9A15D" stroke="#C9A15D" strokeWidth="0"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" /></svg>
-              <span className="font-sans font-medium text-[14px] text-text-secondary">info@infinityluxespaces.com</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="#C9A15D" stroke="#C9A15D" strokeWidth="0" className="transition-transform duration-300 hover:scale-110 hover:-translate-y-1 cursor-pointer"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" /></svg>
+              <span className="font-sans font-medium text-[14px] text-text-secondary">infinityluxespaces@gmail.com</span>
             </div>
 
             {/* Location */}
             <div className="flex items-center gap-5">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="#C9A15D" stroke="#C9A15D" strokeWidth="0"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 0 1 0-5 2.5 2.5 0 0 1 0 5z" /></svg>
-              <span className="font-sans font-medium text-[14px] text-text-secondary">New Delhi, India</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="#C9A15D" stroke="#C9A15D" strokeWidth="0" className="transition-transform duration-300 hover:scale-110 hover:-translate-y-1 cursor-pointer"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 0 1 0-5 2.5 2.5 0 0 1 0 5z" /></svg>
+              <span className="font-sans font-medium text-[14px] text-text-secondary leading-relaxed">
+                C-97, Basement,<br />
+                Sector-33, Noida,<br />
+                Distt. Gautam Budh Nagar,<br />
+                Pincode – 201301 (U.P.)
+              </span>
             </div>
 
             <div className="mt-5">
@@ -698,16 +705,16 @@ function HomeCta() {
               </p>
               <div className="flex gap-4">
                 <a href="#" className="w-10 h-10 rounded-full border border-[#C9A15D] flex items-center justify-center text-[#C9A15D] hover:bg-[#C9A15D] hover:text-luxury-black transition-all duration-300">
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" stroke="none" className="transition-transform duration-300 group-hover:scale-125"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" /></svg>
                 </a>
                 <a href="#" className="w-10 h-10 rounded-full border border-[#C9A15D] flex items-center justify-center text-[#C9A15D] hover:bg-[#C9A15D] hover:text-luxury-black transition-all duration-300">
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="transition-transform duration-300 group-hover:scale-125"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
                 </a>
                 <a href="#" className="w-10 h-10 rounded-full border border-[#C9A15D] flex items-center justify-center text-[#C9A15D] hover:bg-[#C9A15D] hover:text-luxury-black transition-all duration-300">
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" stroke="none" className="transition-transform duration-300 group-hover:scale-125"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
                 </a>
                 <a href="#" className="w-10 h-10 rounded-full border border-[#C9A15D] flex items-center justify-center text-[#C9A15D] hover:bg-[#C9A15D] hover:text-luxury-black transition-all duration-300">
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.162-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.401.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.951-7.252 4.168 0 7.41 2.967 7.41 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.354-.629-2.758-1.379l-.749 2.848c-.269 1.045-1.004 2.352-1.498 3.146 1.123.345 2.306.535 3.55.535 6.607 0 11.985-5.365 11.985-11.987C23.97 5.367 18.624 0 12.017 0z"/></svg>
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" stroke="none" className="transition-transform duration-300 group-hover:scale-125"><path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.162-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.401.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.951-7.252 4.168 0 7.41 2.967 7.41 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.354-.629-2.758-1.379l-.749 2.848c-.269 1.045-1.004 2.352-1.498 3.146 1.123.345 2.306.535 3.55.535 6.607 0 11.985-5.365 11.985-11.987C23.97 5.367 18.624 0 12.017 0z" /></svg>
                 </a>
               </div>
             </div>

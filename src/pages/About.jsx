@@ -90,9 +90,9 @@ function OurStory() {
           {/* Stats */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-y-10 sm:gap-y-0 mt-10 lg:mt-24">
             {[
-              { icon: <Users size={44} className="text-[#C9A15D]" strokeWidth={1} />, value: '25+', label: 'Years Combined\nLeadership Expertise' },
-              { icon: <Layers size={44} className="text-[#C9A15D]" strokeWidth={1} />, value: '10+', label: 'Bespoke Craft\nCategories' },
-              { icon: <Trophy size={44} className="text-[#C9A15D]" strokeWidth={1} />, value: '11+', label: 'Prestigious Clients\nAcross Sectors' },
+              { icon: <Users size={44} className="text-[#C9A15D] transition-transform duration-300 hover:scale-110 hover:-translate-y-1 cursor-pointer" strokeWidth={1} />, value: '25+', label: 'Years Combined\nLeadership Expertise' },
+              { icon: <Layers size={44} className="text-[#C9A15D] transition-transform duration-300 hover:scale-110 hover:-translate-y-1 cursor-pointer" strokeWidth={1} />, value: '10+', label: 'Bespoke Craft\nCategories' },
+              { icon: <Trophy size={44} className="text-[#C9A15D] transition-transform duration-300 hover:scale-110 hover:-translate-y-1 cursor-pointer" strokeWidth={1} />, value: '11+', label: 'Prestigious Clients\nAcross Sectors' },
             ].map((s, i) => (
               <div key={i} className={`flex flex-col items-center text-center gap-3 px-2 lg:px-4 ${i > 0 ? 'sm:border-l border-[#C9A15D]/30' : ''}`}>
                 {s.icon}
@@ -148,22 +148,22 @@ const standards = [
   {
     title: 'Bespoke Design Approach',
     desc: 'Every space is designed around your lifestyle, requirements, and aesthetic vision.',
-    icon: <img src={infPenIcon} alt="Design Approach" className="w-16 h-16 object-contain scale-[2.2]" />,
+    icon: <img src={infPenIcon} alt="Design Approach" className="w-16 h-16 object-contain scale-[2.2] transition-transform duration-300 hover:scale-[2.4] cursor-pointer" />,
   },
   {
     title: 'Premium Global Materials',
     desc: 'Carefully sourced materials and finishes that meet international quality standards.',
-    icon: <img src={infGlobeIcon} alt="Global Materials" className="w-16 h-16 object-contain scale-[2.2]" />,
+    icon: <img src={infGlobeIcon} alt="Global Materials" className="w-16 h-16 object-contain scale-[2.2] transition-transform duration-300 hover:scale-[2.4] cursor-pointer" />,
   },
   {
     title: 'Turnkey Project Execution',
     desc: 'From consultation and material selection to final handover, we manage it all.',
-    icon: <img src={infSetIcon} alt="Turnkey Execution" className="w-16 h-16 object-contain scale-[2.2]" />,
+    icon: <img src={infSetIcon} alt="Turnkey Execution" className="w-16 h-16 object-contain scale-[2.2] transition-transform duration-300 hover:scale-[2.4] cursor-pointer" />,
   },
   {
     title: 'Timeless Craftsmanship',
     desc: 'Luxury solutions crafted with precision, built to maintain their elegance for years to come.',
-    icon: <img src={infStarIcon} alt="Craftsmanship" className="w-16 h-16 object-contain scale-[2.2]" />,
+    icon: <img src={infStarIcon} alt="Craftsmanship" className="w-16 h-16 object-contain scale-[2.2] transition-transform duration-300 hover:scale-[2.4] cursor-pointer" />,
   },
 ]
 
@@ -219,7 +219,7 @@ function Expertise() {
       <div className="section-container">
         <div className="text-center mb-12 flex flex-col items-center">
           <p className="text-[#C9A15D] text-[10px] tracking-wider uppercase mb-4 flex items-center gap-3 font-semibold">
-             OUR EXPERTISE 
+            OUR EXPERTISE
           </p>
           <h2 className="font-heading text-4xl lg:text-5xl font-semibold text-text-heading leading-tight">
             Curated Luxury Solutions
@@ -235,10 +235,10 @@ function Expertise() {
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
               />
               <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors duration-500" />
-              
+
               <div className="absolute inset-0 flex items-end p-5">
                 <div className="flex items-center gap-4">
-                  <img src={item.icon} alt={item.label} className="h-14 w-auto object-contain flex-shrink-0" />
+                  <img src={item.icon} alt={item.label} className="h-14 w-auto object-contain flex-shrink-0 transition-transform duration-300 group-hover:scale-110" />
                   <p className="font-sans text-[13px] font-semibold text-white whitespace-pre-line leading-snug">
                     {item.label}
                   </p>
@@ -249,8 +249,8 @@ function Expertise() {
         </div>
 
         <div className="flex justify-center mt-14">
-          <Link to="/products" className="border border-[#C9A15D]/50 hover:border-[#C9A15D] px-8 py-3 text-[11px] font-semibold tracking-widest uppercase text-[#C9A15D] transition-colors duration-300 inline-flex items-center gap-3">
-            Explore All Products <ArrowRight size={14} className="text-[#C9A15D]" />
+          <Link to="/products" className="border border-[#C9A15D] hover:bg-[#C9A15D] hover:text-[#050505] px-8 py-3 text-[11px] font-semibold tracking-widest uppercase text-[#C9A15D] transition-colors duration-300 inline-flex items-center gap-3 group">
+            Explore All Products <ArrowRight size={14} className="text-[#C9A15D] group-hover:text-[#050505] transition-colors duration-300" />
           </Link>
         </div>
       </div>
@@ -302,14 +302,14 @@ function Leadership() {
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
               </div>
-              
+
               {/* Text side */}
               <div className="w-full xl:w-[55%] p-5 lg:p-6 flex flex-col justify-center">
                 <h3 className="font-sans text-[15px] lg:text-[16px] font-semibold text-[#C9A15D] tracking-wide mb-1.5">{leader.name}</h3>
                 <p className="font-sans text-[11px] lg:text-[12px] font-medium text-[#D4AF37] mb-4">{leader.role}</p>
-                
+
                 <div className="w-10 h-[1px] bg-[#C9A15D]/50 mb-5" />
-                
+
                 <p className="font-sans text-[10px] lg:text-[11px] text-[#e0e0e0] leading-[1.7]">{leader.bio}</p>
               </div>
             </div>
@@ -336,27 +336,29 @@ function AboutClients() {
       <div className="section-container">
         <p className="text-[#C9A15D] text-[10px] tracking-wider uppercase mb-4 text-center font-semibold">Trusted by Industry Leaders</p>
         <h2 className="font-heading text-3xl font-semibold text-text-heading text-center mb-10">Our Prestigious Clients</h2>
-        
+
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 mt-8">
           {clientLogos.map((logo, i) => (
             <div
               key={i}
-              className="flex items-center justify-center transition-colors duration-300 group"
+              className="flex items-center justify-center group cursor-pointer"
               style={{ height: '100px' }}
             >
-              <div
-                className="w-full h-full scale-[2.2] bg-[#C9A15D] opacity-80 group-hover:opacity-100 group-hover:scale-[2.5] transition-all duration-700 ease-out flex-shrink-0"
-                style={{
-                  WebkitMaskImage: `url(${logo})`,
-                  maskImage: `url(${logo})`,
-                  WebkitMaskSize: 'contain',
-                  maskSize: 'contain',
-                  WebkitMaskPosition: 'center',
-                  maskPosition: 'center',
-                  WebkitMaskRepeat: 'no-repeat',
-                  maskRepeat: 'no-repeat',
-                }}
-              />
+              <div className="w-full h-full transition-transform duration-500 group-hover:scale-110 group-hover:-translate-y-1">
+                <div
+                  className="w-full h-full scale-[2.2] bg-[#C9A15D] opacity-80 group-hover:opacity-100 transition-opacity duration-500 flex-shrink-0 pointer-events-none"
+                  style={{
+                    WebkitMaskImage: `url(${logo})`,
+                    maskImage: `url(${logo})`,
+                    WebkitMaskSize: 'contain',
+                    maskSize: 'contain',
+                    WebkitMaskPosition: 'center',
+                    maskPosition: 'center',
+                    WebkitMaskRepeat: 'no-repeat',
+                    maskRepeat: 'no-repeat',
+                  }}
+                />
+              </div>
             </div>
           ))}
         </div>
@@ -376,10 +378,10 @@ function AboutCta() {
           className="w-full h-full object-cover"
         />
       </div>
-      
+
       <div className="relative section-container flex justify-end">
         <div className="w-full lg:w-2/3 xl:w-3/5 text-center flex flex-col items-center">
-          <h2 
+          <h2
             className="font-heading font-medium text-white mb-6"
             style={{ fontSize: 'clamp(28px, 4vw, 42px)' }}
           >
@@ -389,18 +391,18 @@ function AboutCta() {
             Whether you're designing a luxury residence, a hospitality destination, or a corporate environment, our team is ready to bring your vision to life.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-6">
-            <Link 
-              to="/contact" 
+            <Link
+              to="/contact"
               className="px-8 py-3.5 text-[11px] font-bold tracking-widest uppercase transition-all duration-300 inline-flex items-center gap-3 text-black shadow-lg hover:shadow-xl hover:-translate-y-0.5"
               style={{ background: 'linear-gradient(to right, #D4AF37, #C9A15D)' }}
             >
               Schedule Consultation <ArrowRight size={14} className="text-black" />
             </Link>
-            <Link 
-              to="/portfolio" 
-              className="border border-[#C9A15D] bg-[#050505]/80 hover:bg-[#050505] text-[#f0f0f0] px-8 py-3.5 text-[11px] font-bold tracking-widest uppercase transition-all duration-300 inline-flex items-center gap-3 hover:-translate-y-0.5"
+            <Link
+              to="/portfolio"
+              className="border border-[#C9A15D] hover:bg-[#C9A15D] hover:text-[#050505] text-[#C9A15D] px-8 py-3.5 text-[11px] font-bold tracking-widest uppercase transition-all duration-300 inline-flex items-center gap-3 hover:-translate-y-0.5 group"
             >
-              Explore Portfolio <ArrowRight size={14} className="text-[#C9A15D]" />
+              Explore Portfolio <ArrowRight size={14} className="text-[#C9A15D] group-hover:text-[#050505] transition-colors duration-300" />
             </Link>
           </div>
         </div>

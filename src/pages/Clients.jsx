@@ -70,9 +70,9 @@ function ClientsStatsBar() {
       <div className="section-container py-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-y-10 lg:gap-y-0">
           {clientStats.map((s, i) => (
-            <div key={i} className={`flex items-center gap-5 px-4 lg:px-6 ${i < 3 ? 'lg:border-r border-[#C9A15D]/20' : ''}`}>
+            <div key={i} className={`flex items-center gap-5 px-4 lg:px-6 group cursor-pointer ${i < 3 ? 'lg:border-r border-[#C9A15D]/20' : ''}`}>
               <div className="relative w-[42px] h-[42px] flex-shrink-0 flex items-center justify-center">
-                <img src={s.icon} alt="Stat Icon" className="absolute w-[126px] max-w-none object-contain" />
+                <img src={s.icon} alt="Stat Icon" className="absolute w-[126px] max-w-none object-contain transition-transform duration-300 group-hover:scale-110" />
               </div>
               <div className="relative z-10">
                 {s.value && <p className="font-sans text-[20px] font-medium text-[#e8e6e3] leading-none mb-1">{s.value}</p>}
@@ -118,9 +118,9 @@ function ClientLogos() {
           {clientsData.map((logo, i) => (
             <div
               key={i}
-              className="relative border border-[#C9A15D]/20 py-5 px-4 flex flex-col items-center justify-center hover:border-[#C9A15D]/50 hover:bg-[#0a0a0a] transition-all duration-300 min-h-[110px] overflow-hidden"
+              className="relative border border-[#C9A15D]/20 py-5 px-4 flex flex-col items-center justify-center hover:border-[#C9A15D]/50 hover:bg-[#0a0a0a] transition-all duration-300 min-h-[110px] overflow-hidden group cursor-pointer"
             >
-              <img src={logo} alt="Client Logo" className="absolute w-[180px] md:w-[260px] max-w-none object-contain" />
+              <img src={logo} alt="Client Logo" className="absolute w-[180px] md:w-[260px] max-w-none object-contain transition-transform duration-300 group-hover:scale-110" />
             </div>
           ))}
         </div>
@@ -186,14 +186,14 @@ function Testimonials() {
         onClick={prev}
         className="absolute left-4 lg:left-8 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full border border-[#C9A15D] flex items-center justify-center text-[#C9A15D] hover:bg-[#C9A15D] hover:text-[#050505] transition-all z-20"
       >
-        <ChevronLeft size={20} />
+        <ChevronLeft size={20} className="transition-transform duration-300 hover:-translate-x-1" />
       </button>
 
       <button
         onClick={next}
         className="absolute right-4 lg:right-8 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full border border-[#C9A15D] flex items-center justify-center text-[#C9A15D] hover:bg-[#C9A15D] hover:text-[#050505] transition-all z-20"
       >
-        <ChevronRight size={20} />
+        <ChevronRight size={20} className="transition-transform duration-300 hover:translate-x-1" />
       </button>
 
       {/* Main Content Area */}
@@ -275,8 +275,8 @@ function ClientsCta() {
           {/* Left Side (Icon + Text) */}
           <div className="flex flex-col md:flex-row items-center text-center md:text-left gap-6 lg:gap-8">
             {/* Gold Armchair Circle */}
-            <div className="w-20 h-20 lg:w-24 lg:h-24 rounded-full border border-[#C9A15D] flex items-center justify-center text-[#C9A15D] flex-shrink-0">
-              <Armchair size={40} strokeWidth={1} className="lg:w-11 lg:h-11" />
+            <div className="w-20 h-20 lg:w-24 lg:h-24 rounded-full border border-[#C9A15D] flex items-center justify-center text-[#C9A15D] flex-shrink-0 cursor-pointer group">
+              <Armchair size={40} strokeWidth={1} className="lg:w-11 lg:h-11 transition-transform duration-300 group-hover:scale-110" />
             </div>
 
             {/* Text Content */}
@@ -298,9 +298,9 @@ function ClientsCta() {
           <div className="flex-shrink-0 lg:pr-24">
             <Link 
               to="/contact" 
-              className="inline-flex items-center gap-3 border border-[#C9A15D] text-[#C9A15D] px-8 py-3 text-sm font-semibold tracking-[0.1em] uppercase hover:bg-[#C9A15D] hover:text-[#050505] transition-all"
+              className="inline-flex items-center gap-3 border border-[#C9A15D] text-[#C9A15D] px-8 py-3 text-sm font-semibold tracking-[0.1em] uppercase hover:bg-[#C9A15D] hover:text-[#050505] transition-all group"
             >
-              START YOUR PROJECT <ArrowRight size={16} />
+              START YOUR PROJECT <ArrowRight size={16} className="transition-transform duration-300 group-hover:translate-x-1" />
             </Link>
           </div>
         </div>
