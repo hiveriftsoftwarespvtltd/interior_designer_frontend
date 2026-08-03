@@ -37,7 +37,7 @@ import clientTivoli from '../assets/home/prestigious _clients_tivoli.png'
 // ─── HERO ─────────────────────────────────────────────────────────────────────
 function AboutHero() {
   return (
-    <section className="relative min-h-[75vh] bg-luxury-black overflow-hidden">
+    <section className="relative min-h-[55vh] bg-luxury-black overflow-hidden">
       <div className="absolute inset-0">
         <img
           src={aboutBanner}
@@ -46,18 +46,23 @@ function AboutHero() {
         />
         <div className="absolute inset-0 bg-black/30" />
       </div>
-      <div className="relative section-container pt-40 pb-20 min-h-[75vh] flex flex-col justify-center">
-        <div className="max-w-xl">
-          <p className="eyebrow-label mb-4">About Infinity Luxe Spaces</p>
-          <h1 className="font-heading font-semibold text-4xl lg:text-6xl text-text-heading leading-tight">
-            Crafting Spaces<br />That Reflect Your<br />Identity
+      <div className="relative section-container pt-32 pb-12 min-h-[55vh] flex flex-col justify-center items-center text-center">
+        <div className="max-w-2xl flex flex-col items-center">
+          <p className="text-[#C9A15D] text-[16px] font-bold tracking-[0.2em] uppercase mb-4">
+            About Infinity Luxe Spaces
+          </p>
+          <h1
+            className="font-heading font-medium text-white leading-[1.2] tracking-wide"
+            style={{ fontSize: 'clamp(32px, 6vw, 56px)' }}
+          >
+            Crafting Spaces That Reflect Your Identity
           </h1>
-          <div className="flex items-center gap-2 mt-8 mb-8 max-w-[120px]">
-            <span className="h-px bg-[#C9A15D] flex-grow" />
-            <span className="w-2 h-2 bg-[#C9A15D] rotate-45 flex-shrink-0" />
-            <span className="h-px bg-[#C9A15D] flex-grow" />
+          <div className="flex items-center gap-3 w-64 my-8">
+            <div className="h-px bg-[#C9A15D]/60 flex-1" />
+            <div className="w-2 h-2 bg-[#C9A15D] rotate-45 flex-shrink-0" />
+            <div className="h-px bg-[#C9A15D]/60 flex-1" />
           </div>
-          <p className="font-sans text-sm text-text-paragraph leading-relaxed max-w-md">
+          <p className="font-sans text-[16px] text-[#e5e5e5] leading-relaxed max-w-lg">
             Luxury is not merely what you see — it is what you experience every day. At Infinity Luxe Spaces, we transform residential, commercial, and hospitality environments into timeless spaces through bespoke furnishings, curated materials, and exceptional craftsmanship.
           </p>
         </div>
@@ -78,10 +83,10 @@ function OurStory() {
               heading="Where Craft Meets Comfort, Infinitely"
             />
             <div className="flex flex-col gap-4 mt-2">
-              <p className="font-sans text-sm text-text-paragraph leading-relaxed">
+              <p className="font-sans text-[16px] text-text-paragraph leading-relaxed">
                 Infinity Luxe Spaces was founded with a vision to redefine luxury interiors through personalized design solutions and premium furnishing experiences.
               </p>
-              <p className="font-sans text-sm text-text-paragraph leading-relaxed">
+              <p className="font-sans text-[16px] text-text-paragraph leading-relaxed">
                 By combining design intelligence, global material sourcing, and precision execution, we create environments that feel sophisticated, welcoming, and uniquely yours.
               </p>
             </div>
@@ -97,7 +102,7 @@ function OurStory() {
               <div key={i} className={`flex flex-col items-center text-center gap-3 px-2 lg:px-4 ${i > 0 ? 'sm:border-l border-[#C9A15D]/30' : ''}`}>
                 {s.icon}
                 <p className="font-heading text-4xl font-semibold text-white mt-1">{s.value}</p>
-                <p className="font-sans text-[11px] text-[#B6B6B6] leading-snug whitespace-pre-line">{s.label}</p>
+                <p className="font-sans text-[16px] text-[#B6B6B6] leading-snug whitespace-pre-line">{s.label}</p>
               </div>
             ))}
           </div>
@@ -134,7 +139,7 @@ function Philosophy() {
             "Luxury isn't just what you see — it's what you feel every day."
           </p>
           <div className="w-10 h-px bg-[#C9A15D]/40 my-8" />
-          <p className="font-sans text-sm text-text-paragraph leading-relaxed">
+          <p className="font-sans text-[16px] text-text-paragraph leading-relaxed">
             At Infinity Luxe Spaces, every stitch, plank, texture, and finish is carefully selected to create spaces that inspire, endure, and belong uniquely to their owners.
           </p>
         </div>
@@ -192,7 +197,7 @@ function InfinityStandard() {
               )}
               {item.icon}
               <h3 className="font-heading text-[13px] font-semibold text-[#C9A15D]">{item.title}</h3>
-              <p className="font-sans text-[11px] text-[#B6B6B6] leading-relaxed -mt-3">{item.desc}</p>
+              <p className="font-sans text-[16px] text-[#B6B6B6] leading-relaxed -mt-3">{item.desc}</p>
             </div>
           ))}
         </div>
@@ -238,8 +243,8 @@ function Expertise() {
 
               <div className="absolute inset-0 flex items-end p-5">
                 <div className="flex items-center gap-4">
-                  <img src={item.icon} alt={item.label} className="h-14 w-auto object-contain flex-shrink-0 transition-transform duration-300 group-hover:scale-110" />
-                  <p className="font-sans text-[13px] font-semibold text-white whitespace-pre-line leading-snug">
+                  <img src={item.icon} alt={item.label} className="h-14 w-auto object-contain flex-shrink-0 transition-transform duration-300 scale-[2.0] group-hover:scale-[2.2]" />
+                  <p className="font-sans text-[16px] font-semibold text-white whitespace-pre-line leading-snug relative z-10">
                     {item.label}
                   </p>
                 </div>
@@ -306,11 +311,11 @@ function Leadership() {
               {/* Text side */}
               <div className="w-full xl:w-[55%] p-5 lg:p-6 flex flex-col justify-center">
                 <h3 className="font-sans text-[15px] lg:text-[16px] font-semibold text-[#C9A15D] tracking-wide mb-1.5">{leader.name}</h3>
-                <p className="font-sans text-[11px] lg:text-[12px] font-medium text-[#D4AF37] mb-4">{leader.role}</p>
+                <p className="font-sans text-[16px] lg:text-[16px] font-medium text-[#D4AF37] mb-4">{leader.role}</p>
 
                 <div className="w-10 h-[1px] bg-[#C9A15D]/50 mb-5" />
 
-                <p className="font-sans text-[10px] lg:text-[11px] text-[#e0e0e0] leading-[1.7]">{leader.bio}</p>
+                <p className="font-sans text-[10px] lg:text-[12px] text-[#e0e0e0] leading-[1.7]">{leader.bio}</p>
               </div>
             </div>
           ))}
@@ -387,7 +392,7 @@ function AboutCta() {
           >
             Let's Create Something Exceptional
           </h2>
-          <p className="font-sans text-[13px] text-[#e5e5e5] max-w-lg leading-relaxed mb-10">
+          <p className="font-sans text-[16px] text-[#e5e5e5] max-w-lg leading-relaxed mb-10">
             Whether you're designing a luxury residence, a hospitality destination, or a corporate environment, our team is ready to bring your vision to life.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-6">
@@ -399,10 +404,10 @@ function AboutCta() {
               Schedule Consultation <ArrowRight size={14} className="text-black" />
             </Link>
             <Link
-              to="/portfolio"
+              to="/products"
               className="border border-[#C9A15D] hover:bg-[#C9A15D] hover:text-[#050505] text-[#C9A15D] px-8 py-3.5 text-[11px] font-bold tracking-widest uppercase transition-all duration-300 inline-flex items-center gap-3 hover:-translate-y-0.5 group"
             >
-              Explore Portfolio <ArrowRight size={14} className="text-[#C9A15D] group-hover:text-[#050505] transition-colors duration-300" />
+              Explore Products <ArrowRight size={14} className="text-[#C9A15D] group-hover:text-[#050505] transition-colors duration-300" />
             </Link>
           </div>
         </div>

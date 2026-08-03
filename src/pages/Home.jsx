@@ -67,11 +67,11 @@ function Hero() {
   return (
     <div className="relative w-full overflow-hidden flex flex-col justify-center pt-32 pb-12 lg:pt-40 lg:pb-20 flex-grow">
       {/* Content */}
-      <div className="relative max-w-7xl mx-auto px-6 lg:px-14 flex flex-col justify-center w-full">
-        <div style={{ maxWidth: '650px' }}>
+      <div className="relative max-w-7xl mx-auto px-6 lg:px-14 flex flex-col items-center justify-center w-full text-center">
+        <div className="w-full max-w-4xl flex flex-col items-center">
           {/* H1 — elegant serif, lighter weight, uppercase */}
           <h1
-            className="text-text-heading uppercase tracking-normal"
+            className="text-text-heading uppercase tracking-normal text-center drop-shadow-xl"
             style={{
               fontFamily: '"Playfair Display", serif',
               fontSize: 'clamp(36px, 8vw, 92px)',
@@ -79,15 +79,13 @@ function Hero() {
               lineHeight: 1.15,
             }}
           >
-            WHERE<br />
-            CRAFT MEETS<br />
-            COMFORT,<br />
+            WHERE CRAFT MEETS <br />
             <span
               style={{
                 color: '#C9A15D',
               }}
             >
-              INFINITELY
+              COMFORT,INFINITELY
             </span>
           </h1>
 
@@ -99,27 +97,27 @@ function Hero() {
           </div>
 
           {/* Tagline row */}
-          <div className="flex flex-col gap-2 mt-10">
-            <p className="font-sans text-[14px] lg:text-[15px] font-normal tracking-wide text-text-secondary flex flex-wrap items-center gap-2 sm:gap-3">
-              Bespoke Interiors <span className="text-gold-primary text-[10px]">◆</span> Premium Furnishings
+          <div className="flex flex-col gap-3 mt-10 items-center justify-center text-center">
+            <p className="font-sans text-[16px] lg:text-[18px] font-normal tracking-wide text-text-secondary flex flex-wrap items-center justify-center gap-2 sm:gap-3">
+              Bespoke Interiors <span className="text-gold-primary text-[12px]">◆</span> Premium Furnishings
             </p>
-            <p className="font-sans text-[15px] font-normal tracking-wide text-text-secondary">
+            <p className="font-sans text-[16px] lg:text-[18px] font-normal tracking-wide text-text-secondary">
               Turnkey Design Solutions
             </p>
           </div>
 
           {/* CTA Buttons */}
-          <div className="flex items-center gap-4 mt-10 flex-wrap">
+          <div className="flex items-center justify-center gap-6 mt-10 flex-wrap">
             <Link
-              to="/portfolio"
-              className="inline-flex items-center justify-center font-sans font-bold text-[12px] lg:text-[13px] tracking-wider uppercase px-6 lg:px-8 py-4 transition-all duration-300 hover:opacity-90 w-full sm:w-auto sm:min-w-[240px]"
+              to="/products"
+              className="inline-flex items-center justify-center font-sans font-bold text-[14px] tracking-wider uppercase px-8 py-4 transition-all duration-300 hover:opacity-90 w-full sm:w-auto sm:min-w-[240px] rounded-[2px]"
               style={{ background: 'linear-gradient(90deg, #E6C78A 0%, #C9A15D 100%)', color: '#050505' }}
             >
-              EXPLORE OUR CRAFT
+              EXPLORE OUR PRODUCTS
             </Link>
             <Link
               to="/contact"
-              className="inline-flex items-center justify-center font-sans font-bold text-[12px] lg:text-[13px] tracking-wider uppercase px-6 lg:px-8 py-4 transition-all duration-300 hover:bg-gold-primary hover:text-luxury-black w-full sm:w-auto sm:min-w-[240px]"
+              className="inline-flex items-center justify-center font-sans font-bold text-[14px] tracking-wider uppercase px-8 py-4 transition-all duration-300 hover:bg-gold-primary hover:text-luxury-black w-full sm:w-auto sm:min-w-[240px] rounded-[2px]"
               style={{ border: '1px solid #C9A15D', color: '#F5F2EB' }}
             >
               SCHEDULE CONSULTATION
@@ -135,28 +133,28 @@ function Hero() {
 const statsData = [
   {
     svgIcon: (
-      <img src={icon25Years} alt="25+ years" className="w-16 md:w-24 h-auto -my-2 md:-my-6 transition-transform duration-300 hover:scale-110 cursor-pointer" />
+      <img src={icon25Years} alt="25+ years" className="w-16 md:w-24 h-auto -my-2 md:-my-6" />
     ),
     value: '25+',
     label: 'Years of Combined\nLeadership Expertise',
   },
   {
     svgIcon: (
-      <img src={iconCategories} alt="10+ categories" className="w-16 md:w-24 h-auto -my-2 md:-my-6 transition-transform duration-300 hover:scale-110 cursor-pointer" />
+      <img src={iconCategories} alt="10+ categories" className="w-16 md:w-24 h-auto -my-2 md:-my-6" />
     ),
     value: '10+',
     label: 'Categories of\nBespoke Craftsmanship',
   },
   {
     svgIcon: (
-      <img src={icon11Clients} alt="11+ clients" className="w-16 md:w-24 h-auto -my-2 md:-my-6 transition-transform duration-300 hover:scale-110 cursor-pointer" />
+      <img src={icon11Clients} alt="11+ clients" className="w-16 md:w-24 h-auto -my-2 md:-my-6" />
     ),
     value: '11+',
     label: 'Prestigious Clients\nAcross Sectors',
   },
   {
     svgIcon: (
-      <img src={iconTurnkey} alt="Turnkey solutions" className="w-16 md:w-24 h-auto -my-2 md:-my-6 transition-transform duration-300 hover:scale-110 cursor-pointer" />
+      <img src={iconTurnkey} alt="Turnkey solutions" className="w-16 md:w-24 h-auto -my-2 md:-my-6" />
     ),
     value: 'Turnkey',
     label: 'End-to-End\nSolutions',
@@ -165,12 +163,12 @@ const statsData = [
 
 function StatsBar() {
   return (
-    <div className="border-t border-gold-border/30 relative z-10 -mt-1 bg-luxury-black/60 lg:bg-transparent">
+    <div className="border-t border-gold-border/30 relative z-10 -mt-1 bg-luxury-black">
       <div className="max-w-7xl mx-auto px-6 lg:px-14 py-8">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-10">
           {statsData.map((s, i) => (
             <div key={i} className="flex items-center gap-5">
-              <div className="flex-shrink-0 text-gold-primary">{s.svgIcon}</div>
+              <div className="flex-shrink-0 text-gold-primary scale-[1.5] origin-left transition-transform duration-300 hover:scale-[1.7] cursor-pointer">{s.svgIcon}</div>
               <div className="flex flex-col">
                 <p
                   className="text-text-heading"
@@ -178,7 +176,7 @@ function StatsBar() {
                 >
                   {s.value}
                 </p>
-                <p className="font-sans text-[11px] text-text-paragraph leading-relaxed mt-1 whitespace-pre-line">
+                <p className="font-sans text-[16px] text-text-paragraph leading-relaxed mt-1 whitespace-pre-line">
                   {s.label}
                 </p>
               </div>
@@ -223,10 +221,10 @@ function AboutPreview() {
             </h2>
 
             <div className="flex flex-col gap-4 mt-1">
-              <p className="font-sans text-[13px] text-text-paragraph leading-relaxed">
+              <p className="font-sans text-[16px] text-text-paragraph leading-relaxed">
                 Infinity Luxe Spaces is a premium furnishing and interior solutions firm redefining luxury living through bespoke design and timeless craftsmanship.
               </p>
-              <p className="font-sans text-[13px] text-text-paragraph leading-relaxed">
+              <p className="font-sans text-[16px] text-text-paragraph leading-relaxed">
                 With a legacy of trust and taste, we bring together design intelligence, curated global materials, and precision execution — transforming residential, commercial, and hospitality spaces into environments that feel unmistakably yours.
               </p>
             </div>
@@ -262,48 +260,56 @@ const productItems = [
     desc: 'Tailored to your light,\nmood, and architecture',
     img: prod1,
     icon: prodIcon1,
+    slug: 'curtains-drapes'
   },
   {
     title: 'Premium Blinds',
     desc: 'Venetian, Roller, Zebra,\nRoman & Honeycomb\n– sunscreen & blackout\nmaterials',
     img: prod2,
     icon: prodIcon2,
+    slug: 'premium-blinds'
   },
   {
     title: 'Exclusive\nWallpapers',
     desc: 'International collections\nplus made-to-order\ndesigns',
     img: prod3,
     icon: prodIcon3,
+    slug: 'exclusive-wallpapers'
   },
   {
     title: 'Wooden\nFlooring',
     desc: 'Warmth, durability,\nand a refined finish',
     img: prod4,
     icon: prodIcon4,
+    slug: 'wooden-flooring'
   },
   {
     title: 'Carpets & Rugs',
     desc: 'Wall-to-wall, carpet tiles,\nrugs, vinyl & sports\nflooring for every\nspecification',
     img: prod5,
     icon: prodIcon5,
+    slug: 'carpets-rugs'
   },
   {
     title: 'Upholstery &\nLeatherettes',
     desc: 'Rich textures for sofas,\nchairs, and headboards\n– including luxurious,\nsupple & resilient\nleatherettes',
     img: prod6,
     icon: prodIcon6,
+    slug: 'upholstery-leatherettes'
   },
   {
     title: 'Customised\nFurniture',
     desc: 'Statement pieces built\nto fit your space\nand style',
     img: prod7,
     icon: prodIcon7,
+    slug: 'customised-furniture'
   },
   {
     title: 'Mattresses &\nSleep Solutions',
     desc: 'All types, from the best\nbrands, for residential\n& hospitality use',
     img: prod8,
     icon: prodIcon8,
+    slug: 'mattresses-sleep'
   },
 ]
 
@@ -346,11 +352,7 @@ function ProductsGrid() {
         {/* 4-column grid, 2 rows */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {productItems.map((item, i) => (
-            <div
-              key={i}
-              className="relative group overflow-hidden cursor-pointer border"
-              style={{ aspectRatio: '1 / 1', borderColor: '#C9A15D', borderWidth: '2px' }}
-            >
+            <Link key={i} to={`/products/${item.slug}`} className="relative group overflow-hidden cursor-pointer border aspect-[4/5] lg:aspect-[4/5.2]" style={{ borderColor: '#C9A15D', borderWidth: '2px' }}>
               {/* Background image */}
               <img
                 src={item.img}
@@ -361,15 +363,15 @@ function ProductsGrid() {
               <div className="absolute inset-0 bg-[#050505]/40 group-hover:bg-[#050505]/60 transition-colors duration-500" />
 
               {/* Content Container */}
-              <div className="absolute inset-0 flex flex-col items-center justify-center p-4 text-center">
+              <div className="absolute inset-0 flex flex-col items-center justify-start pt-10 px-4 text-center">
                 {/* Icon */}
-                <div className="mb-4 w-16 h-16 rounded-full border-2 border-[#C9A15D] flex items-center justify-center overflow-hidden">
-                  <img src={item.icon} alt={item.title} className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" />
+                <div className="mb-4 w-16 h-16 rounded-full border-2 border-[#C9A15D] flex items-center justify-center">
+                  <img src={item.icon} alt={item.title} className="w-full h-full object-contain scale-[1.6] transition-transform duration-300 group-hover:scale-[1.8]" />
                 </div>
 
                 {/* Heading */}
                 <h3
-                  className="text-text-heading whitespace-pre-line mb-2"
+                  className="text-text-heading whitespace-pre-line mb-2 flex items-center justify-center min-h-[40px]"
                   style={{ fontFamily: '"Montserrat", sans-serif', fontWeight: 600, fontSize: '13px', lineHeight: 1.3 }}
                 >
                   {item.title}
@@ -377,13 +379,18 @@ function ProductsGrid() {
 
                 {/* Description */}
                 <p
-                  className="text-text-paragraph whitespace-pre-line"
-                  style={{ fontFamily: '"Montserrat", sans-serif', fontWeight: 400, fontSize: '10px', lineHeight: 1.4 }}
+                  className="text-text-paragraph whitespace-pre-line pb-10"
+                  style={{ fontFamily: '"Montserrat", sans-serif', fontWeight: 400, fontSize: '16px', lineHeight: 1.4 }}
                 >
                   {item.desc}
                 </p>
+                
+                {/* Fixed Arrow Button at Bottom */}
+                <div className="absolute bottom-6 left-1/2 -translate-x-1/2">
+                  <span className="block text-[#C9A15D] text-xl leading-none transition-transform duration-300 group-hover:translate-x-2">→</span>
+                </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
 
@@ -471,7 +478,7 @@ function WhyUs() {
               </h3>
               <p
                 className="whitespace-pre-line"
-                style={{ fontFamily: '"Montserrat", sans-serif', fontWeight: 400, fontSize: '11px', color: '#B6B6B6', lineHeight: 1.6 }}
+                style={{ fontFamily: '"Montserrat", sans-serif', fontWeight: 400, fontSize: '16px', color: '#B6B6B6', lineHeight: 1.6 }}
               >
                 {item.desc}
               </p>
@@ -542,11 +549,11 @@ function PortfolioPreview() {
           </div>
 
           {/* Left / Right arrows */}
-          <button className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-5 w-9 h-9 border border-gold-border/40 bg-luxury-black/80 flex items-center justify-center text-gold-primary hover:bg-gold-primary hover:text-luxury-black transition-all z-10">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M15 18l-6-6 6-6"/></svg>
+          <button className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-5 w-12 h-12 border border-gold-border/40 bg-luxury-black/80 flex items-center justify-center text-gold-primary hover:border-gold-primary transition-all z-10 group">
+            <ChevronLeft size={24} className="group-hover:scale-110 transition-transform" />
           </button>
-          <button className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-5 w-9 h-9 border border-gold-border/40 bg-luxury-black/80 flex items-center justify-center text-gold-primary hover:bg-gold-primary hover:text-luxury-black transition-all z-10">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M9 18l6-6-6-6"/></svg>
+          <button className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-5 w-12 h-12 border border-gold-border/40 bg-luxury-black/80 flex items-center justify-center text-gold-primary hover:border-gold-primary transition-all z-10 group">
+            <ChevronRight size={24} className="group-hover:scale-110 transition-transform" />
           </button>
         </div>
 
@@ -605,7 +612,7 @@ function ClientsStrip() {
           ))}
         </div>
 
-        <div className="flex justify-center mt-7 relative z-10">
+        <div className="flex justify-center mt-7">
           <Link
             to="/clients"
             className="inline-flex items-center font-sans font-semibold text-[10px] tracking-[0.2em] uppercase px-7 py-3 border border-gold-primary text-gold-primary hover:bg-gold-primary hover:text-luxury-black transition-all duration-200"
@@ -648,13 +655,13 @@ function HomeCta() {
             >
               Let's Create Your<br />Next Space Together
             </h2>
-            <p className="font-sans text-[13px] text-text-paragraph leading-relaxed mt-4" style={{ maxWidth: '400px' }}>
+            <p className="font-sans text-[16px] text-text-paragraph leading-relaxed mt-4" style={{ maxWidth: '400px' }}>
               Whether you're designing a luxury residence, a hospitality destination, or a corporate environment, our team is ready to bring your vision to life.
             </p>
             <div className="flex flex-wrap gap-4 mt-8">
               <Link
                 to="/contact"
-                className="inline-flex items-center font-sans font-semibold text-[10px] tracking-[0.18em] uppercase px-6 py-3.5 transition-all duration-200 hover:opacity-90"
+                className="inline-flex items-center font-sans font-bold text-[14px] tracking-wider uppercase px-8 py-4 transition-all duration-300 hover:opacity-90 rounded-[2px]"
                 style={{ background: '#C9A15D', color: '#050505' }}
               >
                 Book a Design Consultation
@@ -676,23 +683,21 @@ function HomeCta() {
             {/* Phone */}
             <div className="flex items-center gap-5">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="#C9A15D" stroke="#C9A15D" strokeWidth="0" className="transition-transform duration-300 hover:scale-110 hover:-translate-y-1 cursor-pointer"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.11h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.72a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 16.92z" /></svg>
-              <span className="font-sans font-medium text-[14px] text-text-secondary">8826607109</span>
+              <span className="font-sans font-medium text-[16px] text-text-secondary">8826607109</span>
             </div>
 
             {/* Email */}
             <div className="flex items-center gap-5">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="#C9A15D" stroke="#C9A15D" strokeWidth="0" className="transition-transform duration-300 hover:scale-110 hover:-translate-y-1 cursor-pointer"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" /></svg>
-              <span className="font-sans font-medium text-[14px] text-text-secondary">infinityluxespaces@gmail.com</span>
+              <span className="font-sans font-medium text-[16px] text-text-secondary">infinityluxespaces@gmail.com</span>
             </div>
 
             {/* Location */}
             <div className="flex items-center gap-5">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="#C9A15D" stroke="#C9A15D" strokeWidth="0" className="transition-transform duration-300 hover:scale-110 hover:-translate-y-1 cursor-pointer"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 0 1 0-5 2.5 2.5 0 0 1 0 5z" /></svg>
-              <span className="font-sans font-medium text-[14px] text-text-secondary leading-relaxed">
-                C-97, Basement,<br />
-                Sector-33, Noida,<br />
-                Distt. Gautam Budh Nagar,<br />
-                Pincode – 201301 (U.P.)
+              <span className="font-sans font-medium text-[16px] text-text-secondary leading-relaxed group-hover:text-[#C9A15D] transition-colors duration-300">
+                C-97, Basement, Sector-33, Noida,<br />
+                Distt. Gautam Budh Nagar, Pincode – 201301 (U.P.)
               </span>
             </div>
 
@@ -704,16 +709,16 @@ function HomeCta() {
                 Follow Us
               </p>
               <div className="flex gap-4">
-                <a href="#" className="w-10 h-10 rounded-full border border-[#C9A15D] flex items-center justify-center text-[#C9A15D] hover:bg-[#C9A15D] hover:text-luxury-black transition-all duration-300">
+                <a href="#" className="w-10 h-10 rounded-full border border-[#C9A15D] flex items-center justify-center text-[#C9A15D] hover:bg-[#C9A15D] hover:text-luxury-black transition-all duration-300 group">
                   <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" stroke="none" className="transition-transform duration-300 group-hover:scale-125"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" /></svg>
                 </a>
-                <a href="#" className="w-10 h-10 rounded-full border border-[#C9A15D] flex items-center justify-center text-[#C9A15D] hover:bg-[#C9A15D] hover:text-luxury-black transition-all duration-300">
+                <a href="#" className="w-10 h-10 rounded-full border border-[#C9A15D] flex items-center justify-center text-[#C9A15D] hover:bg-[#C9A15D] hover:text-luxury-black transition-all duration-300 group">
                   <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="transition-transform duration-300 group-hover:scale-125"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
                 </a>
-                <a href="#" className="w-10 h-10 rounded-full border border-[#C9A15D] flex items-center justify-center text-[#C9A15D] hover:bg-[#C9A15D] hover:text-luxury-black transition-all duration-300">
+                <a href="#" className="w-10 h-10 rounded-full border border-[#C9A15D] flex items-center justify-center text-[#C9A15D] hover:bg-[#C9A15D] hover:text-luxury-black transition-all duration-300 group">
                   <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" stroke="none" className="transition-transform duration-300 group-hover:scale-125"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
                 </a>
-                <a href="#" className="w-10 h-10 rounded-full border border-[#C9A15D] flex items-center justify-center text-[#C9A15D] hover:bg-[#C9A15D] hover:text-luxury-black transition-all duration-300">
+                <a href="#" className="w-10 h-10 rounded-full border border-[#C9A15D] flex items-center justify-center text-[#C9A15D] hover:bg-[#C9A15D] hover:text-luxury-black transition-all duration-300 group">
                   <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" stroke="none" className="transition-transform duration-300 group-hover:scale-125"><path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.162-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.401.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.951-7.252 4.168 0 7.41 2.967 7.41 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.354-.629-2.758-1.379l-.749 2.848c-.269 1.045-1.004 2.352-1.498 3.146 1.123.345 2.306.535 3.55.535 6.607 0 11.985-5.365 11.985-11.987C23.97 5.367 18.624 0 12.017 0z" /></svg>
                 </a>
               </div>

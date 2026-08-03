@@ -30,35 +30,34 @@ import turnkeyIcon4 from '../assets/service/Turnkey_Interiors_4.png'
 // ─── HERO ─────────────────────────────────────────────────────────────────────
 function ServicesHero() {
   return (
-    <section className="relative min-h-[60vh] bg-[#050505] overflow-hidden border-b border-[#C9A15D]/50">
+    <section className="relative min-h-[45vh] bg-[#050505] overflow-hidden border-b border-[#C9A15D]/50">
       <div className="absolute inset-0">
         <img
           src={serviceBanner}
           alt="Services hero"
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent" />
+        <div className="absolute inset-0 bg-black/60" />
       </div>
-      <div className="relative section-container pt-32 pb-16 min-h-[60vh] flex flex-col justify-center">
-        <div className="max-w-xl">
-          <p className="text-[#C9A15D] text-[11px] font-bold tracking-[0.2em] uppercase mb-6">
+      <div className="relative section-container pt-28 pb-12 min-h-[45vh] flex flex-col justify-center items-center text-center">
+        <div className="max-w-3xl flex flex-col items-center">
+          <p className="text-[#C9A15D] text-[16px] font-bold tracking-[0.2em] uppercase mb-4">
             OUR SERVICES
           </p>
           <h1
-            className="font-heading font-medium text-white leading-[1.1] tracking-wide"
-            style={{ fontSize: 'clamp(36px, 8vw, 68px)' }}
+            className="font-heading font-medium text-white leading-[1.2] tracking-wide"
+            style={{ fontSize: 'clamp(32px, 6vw, 56px)' }}
           >
-            Crafted to<br />Perfection.<br />
-            <span className="text-[#C9A15D]">Designed for You.</span>
+            Crafted to Perfection. <span className="text-[#C9A15D]">Designed for You.</span>
           </h1>
 
-          <div className="flex items-center gap-3 w-64 my-10">
+          <div className="flex items-center gap-3 w-64 my-8">
             <div className="h-px bg-[#C9A15D]/60 flex-1" />
             <div className="w-2 h-2 bg-[#C9A15D] rotate-45 flex-shrink-0" />
             <div className="h-px bg-[#C9A15D]/60 flex-1" />
           </div>
 
-          <p className="font-sans text-[13px] text-[#e5e5e5] leading-relaxed max-w-lg">
+          <p className="font-sans text-[16px] text-[#e5e5e5] leading-relaxed max-w-lg">
             At Infinity Luxe Spaces, we offer a curated range of premium furnishing and interior solutions that combine timeless craftsmanship, global materials, and personalized design to elevate every space.
           </p>
         </div>
@@ -180,7 +179,7 @@ function ServicesGrid() {
                 {/* Golden horizontal line */}
                 <div className="w-6 h-[1px] bg-[#C9A15D] mb-2.5" />
 
-                <p className="font-sans text-[11.5px] text-[#b3b3b3] leading-[1.6]">{svc.desc}</p>
+                <p className="font-sans text-[16px] text-[#b3b3b3] leading-[1.6]">{svc.desc}</p>
                 {/* Bottom Arrow */}
                 <div className="mt-auto pt-4">
                   <span className="text-[#C9A15D] text-[18px] font-light inline-block group-hover:translate-x-2 transition-transform duration-300">
@@ -220,7 +219,7 @@ function TurnkeySection() {
             <h2 className="font-heading text-[34px] lg:text-[40px] font-medium text-[#f0e8d4] leading-[1.15] mb-4">
               Turnkey Interior<br />Solutions
             </h2>
-            <p className="font-sans text-[13px] text-[#cccccc] leading-relaxed mb-10 max-w-[90%]">
+            <p className="font-sans text-[16px] text-[#cccccc] leading-relaxed mb-10 max-w-[90%]">
               From concept to completion, we manage every detail so you can enjoy a seamless, stress-free experience.
             </p>
 
@@ -231,7 +230,7 @@ function TurnkeySection() {
                     <div className="relative h-[56px] w-full mb-0">
                       <img src={step.icon} alt={step.label} className="absolute -bottom-5 left-1/2 -translate-x-1/2 w-[104px] h-[104px] object-contain max-w-none transition-transform duration-300 hover:scale-110 cursor-pointer" />
                     </div>
-                    <p className="font-sans text-[11px] text-[#e5e5e5] whitespace-pre-line leading-[1.4] font-medium z-10 relative">
+                    <p className="font-sans text-[16px] text-[#e5e5e5] whitespace-pre-line leading-[1.4] font-medium z-10 relative">
                       {step.label}
                     </p>
                   </div>
@@ -269,7 +268,7 @@ function ServicesCta() {
 
           {/* Middle: Paragraph */}
           <div className="w-full lg:flex-1 lg:max-w-md lg:px-4">
-            <p className="font-sans text-[13px] text-[#cccccc] leading-[1.6]">
+            <p className="font-sans text-[16px] text-[#cccccc] leading-[1.6]">
               Let our team of experts bring your vision to life<br className="hidden lg:block" />
               with bespoke solutions and impeccable execution.
             </p>

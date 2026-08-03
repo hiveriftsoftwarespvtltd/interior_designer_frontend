@@ -44,7 +44,7 @@ export function SectionHeader({
       {centered && <GoldDivider className="my-1" />}
       {!centered && <GoldLine className="mt-1" />}
       {subtitle && (
-        <p className="font-sans text-sm text-text-paragraph leading-relaxed max-w-xl mt-1">
+        <p className="font-sans text-[16px] text-text-paragraph leading-relaxed max-w-xl mt-1">
           {subtitle}
         </p>
       )}
@@ -59,7 +59,7 @@ export function StatItem({ icon: Icon, value, label }) {
       {Icon && <Icon size={24} className="text-gold-primary flex-shrink-0 mt-0.5" />}
       <div>
         <p className="font-heading text-2xl font-bold text-text-heading">{value}</p>
-        <p className="font-sans text-xs text-text-paragraph leading-snug mt-0.5">{label}</p>
+        <p className="font-sans text-[16px] text-text-paragraph leading-snug mt-0.5">{label}</p>
       </div>
     </div>
   )

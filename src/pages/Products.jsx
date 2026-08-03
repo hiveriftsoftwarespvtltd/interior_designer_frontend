@@ -37,7 +37,7 @@ import heroBgImage from '../assets/product/product_banner.png'
 // ─── HERO ─────────────────────────────────────────────────────────────────────
 function ProductsHero() {
   return (
-    <section className="relative min-h-[70vh] bg-[#050505] overflow-hidden border-b border-[#C9A15D]/50">
+    <section className="relative min-h-[45vh] bg-[#050505] overflow-hidden border-b border-[#C9A15D]/50">
       <div className="absolute inset-0 z-0">
         <img
           src={heroBgImage}
@@ -46,19 +46,24 @@ function ProductsHero() {
         />
         <div className="absolute inset-0 bg-[#050505]/40" />
       </div>
-      <div className="relative section-container pt-32 pb-12 lg:pt-40 lg:pb-20 min-h-[70vh] flex flex-col justify-center">
-        <div className="max-w-xl">
-          <p className="eyebrow-label mb-4">Our Products</p>
-          <h1 className="font-heading font-semibold text-4xl lg:text-6xl text-text-heading leading-tight">
+      <div className="relative section-container pt-28 pb-12 min-h-[45vh] flex flex-col justify-center items-center text-center">
+        <div className="max-w-2xl flex flex-col items-center">
+          <p className="text-[#C9A15D] text-[16px] font-bold tracking-[0.2em] uppercase mb-4">
+            Our Products
+          </p>
+          <h1
+            className="font-heading font-medium text-white leading-[1.2] tracking-wide"
+            style={{ fontSize: 'clamp(32px, 6vw, 56px)' }}
+          >
             Curated Luxury.<br />
             <span className="text-[#C9A15D]">Crafted for You.</span>
           </h1>
-          <div className="flex items-center gap-2 mt-8 mb-8 w-[240px] lg:w-[340px]">
-            <span className="h-px bg-[#C9A15D] flex-grow" />
-            <span className="w-2 h-2 bg-[#C9A15D] rotate-45 flex-shrink-0" />
-            <span className="h-px bg-[#C9A15D] flex-grow" />
+          <div className="flex items-center gap-3 w-64 my-8">
+            <div className="h-px bg-[#C9A15D]/60 flex-1" />
+            <div className="w-2 h-2 bg-[#C9A15D] rotate-45 flex-shrink-0" />
+            <div className="h-px bg-[#C9A15D]/60 flex-1" />
           </div>
-          <p className="font-sans text-sm text-text-paragraph leading-relaxed max-w-md">
+          <p className="font-sans text-[16px] text-[#e5e5e5] leading-relaxed max-w-lg">
             Explore our exclusive range of premium furnishings and materials, chosen for their quality, elegance, and timeless appeal.
           </p>
         </div>
@@ -73,41 +78,49 @@ const categories = [
     label: 'Customised\nCurtains & Drapes',
     img: catImg1,
     icon: prodIcon1,
+    slug: 'curtains-drapes'
   },
   {
     label: 'Premium\nBlinds',
     img: catImg2,
     icon: prodIcon2,
+    slug: 'premium-blinds'
   },
   {
     label: 'Exclusive\nWallpapers',
     img: catImg3,
     icon: prodIcon3,
+    slug: 'exclusive-wallpapers'
   },
   {
     label: 'Wooden\nFlooring',
     img: catImg4,
     icon: prodIcon4,
+    slug: 'wooden-flooring'
   },
   {
     label: 'Carpets &\nRugs',
     img: catImg5,
     icon: prodIcon5,
+    slug: 'carpets-rugs'
   },
   {
     label: 'Upholstery &\nLeatherettes',
     img: catImg6,
     icon: prodIcon6,
+    slug: 'upholstery-leatherettes'
   },
   {
     label: 'Customised\nFurniture',
     img: catImg7,
     icon: prodIcon7,
+    slug: 'customised-furniture'
   },
   {
     label: 'Mattresses &\nSleep Solutions',
     img: catImg8,
     icon: prodIcon8,
+    slug: 'mattresses-sleep'
   },
 ]
 
@@ -123,7 +136,7 @@ function CategoryGrid() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 px-4 lg:px-0">
           {categories.map((cat, i) => (
-            <div key={i} className="relative group overflow-hidden cursor-pointer border border-[#C9A15D]/40 rounded-[2px] transition-colors duration-300 hover:border-[#C9A15D]">
+            <Link to={`/products/${cat.slug}`} key={i} className="relative group overflow-hidden cursor-pointer border border-[#C9A15D]/40 rounded-[2px] transition-colors duration-300 hover:border-[#C9A15D] block">
               <div className="aspect-[4/5] lg:aspect-[4/5.2]">
                 <img
                   src={cat.img}
@@ -134,17 +147,17 @@ function CategoryGrid() {
 
               {/* Center Top Icon */}
               <div className="absolute top-8 left-1/2 -translate-x-1/2 w-[52px] h-[52px] rounded-full border border-[#C9A15D] bg-[#050505]/60 flex items-center justify-center">
-                <img src={cat.icon} alt="Icon" className="w-[64px] h-[64px] object-contain max-w-none transition-transform duration-300 group-hover:scale-110" />
+                <img src={cat.icon} alt="Icon" className="w-[64px] h-[64px] object-contain max-w-none scale-[1.2] transition-transform duration-300 group-hover:scale-[1.3]" />
               </div>
 
               {/* Bottom Left Text */}
               <div className="absolute bottom-6 left-6 pr-4">
-                <p className="font-sans text-[15px] font-semibold text-[#f0e8d4] whitespace-pre-line leading-[1.3] group-hover:text-[#C9A15D] transition-colors duration-300">
+                <p className="font-sans text-[16px] font-semibold text-[#f0e8d4] whitespace-pre-line leading-[1.3] group-hover:text-[#C9A15D] transition-colors duration-300">
                   {cat.label}
                 </p>
                 <span className="block mt-3 text-[#C9A15D] text-lg leading-none transition-transform duration-300 group-hover:translate-x-2">→</span>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>
@@ -155,7 +168,7 @@ function CategoryGrid() {
 // ─── PREMIUM ADDITIONS ────────────────────────────────────────────────────────
 function PremiumAdditions() {
   return (
-    <section className="bg-[#050505] py-12 lg:py-20 border-b border-[#C9A15D]/50">
+    <section id="functional-elegance" className="bg-[#050505] py-12 lg:py-20 border-b border-[#C9A15D]/50">
       <div className="section-container">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 lg:gap-8 items-center">
           {/* Text */}
@@ -174,7 +187,7 @@ function PremiumAdditions() {
           </div>
 
           {/* Modular Kitchens */}
-          <div className="relative group overflow-hidden border border-[#C9A15D]/30 rounded-[2px]">
+          <Link to="/products/modular-kitchens" className="relative group overflow-hidden border border-[#C9A15D]/30 rounded-[2px] block cursor-pointer">
             <div className="aspect-[1.2]">
               <img
                 src={funcEle1}
@@ -182,18 +195,19 @@ function PremiumAdditions() {
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
             </div>
-            <div className="absolute bottom-6 left-6">
+            <div className="absolute bottom-6 left-6 pr-4">
               <div className="w-[56px] h-[56px] rounded-full border border-[#C9A15D] bg-[#050505]/60 flex items-center justify-center mb-4">
-                <img src={kitchenIcon} alt="Kitchen Icon" className="w-[64px] h-[64px] object-contain max-w-none transition-transform duration-300 hover:scale-110 cursor-pointer" />
+                <img src={kitchenIcon} alt="Kitchen Icon" className="w-[64px] h-[64px] object-contain max-w-none scale-[1.2] transition-transform duration-300 group-hover:scale-[1.3]" />
               </div>
-              <p className="font-sans text-[15px] font-semibold text-[#f0e8d4] whitespace-pre-line leading-[1.3]">
+              <p className="font-sans text-[16px] font-semibold text-[#f0e8d4] whitespace-pre-line leading-[1.3] group-hover:text-[#C9A15D] transition-colors duration-300">
                 Modular Kitchens
               </p>
+              <span className="block mt-3 text-[#C9A15D] text-lg leading-none transition-transform duration-300 group-hover:translate-x-2">→</span>
             </div>
-          </div>
+          </Link>
 
           {/* Wardrobes */}
-          <div className="relative group overflow-hidden border border-[#C9A15D]/30 rounded-[2px]">
+          <Link to="/products/wardrobes" className="relative group overflow-hidden border border-[#C9A15D]/30 rounded-[2px] block cursor-pointer">
             <div className="aspect-[1.2]">
               <img
                 src={funcEle2}
@@ -201,15 +215,16 @@ function PremiumAdditions() {
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
             </div>
-            <div className="absolute bottom-6 left-6">
+            <div className="absolute bottom-6 left-6 pr-4">
               <div className="w-[56px] h-[56px] rounded-full border border-[#C9A15D] bg-[#050505]/60 flex items-center justify-center mb-4">
-                <img src={wardrobeIcon} alt="Wardrobe Icon" className="w-[64px] h-[64px] object-contain max-w-none transition-transform duration-300 hover:scale-110 cursor-pointer" />
+                <img src={wardrobeIcon} alt="Wardrobe Icon" className="w-[64px] h-[64px] object-contain max-w-none scale-[1.2] transition-transform duration-300 group-hover:scale-[1.3]" />
               </div>
-              <p className="font-sans text-[15px] font-semibold text-[#f0e8d4] whitespace-pre-line leading-[1.3]">
+              <p className="font-sans text-[16px] font-semibold text-[#f0e8d4] whitespace-pre-line leading-[1.3] group-hover:text-[#C9A15D] transition-colors duration-300">
                 Wardrobes
               </p>
+              <span className="block mt-3 text-[#C9A15D] text-lg leading-none transition-transform duration-300 group-hover:translate-x-2">→</span>
             </div>
-          </div>
+          </Link>
         </div>
       </div>
     </section>
@@ -235,7 +250,7 @@ function FeaturesBar() {
               <div className="relative h-[56px] w-full mb-1">
                 <img src={f.icon} alt={f.label} className="absolute -bottom-5 left-1/2 -translate-x-1/2 w-[132px] object-contain max-w-none transition-transform duration-300 hover:scale-110 cursor-pointer" />
               </div>
-              <p className="font-sans text-[13px] md:text-[14px] font-medium text-[#f0e8d4] whitespace-pre-line leading-[1.4] relative z-10">
+              <p className="font-sans text-[16px] md:text-[16px] font-medium text-[#f0e8d4] whitespace-pre-line leading-[1.4] relative z-10">
                 {f.label}
               </p>
             </div>
@@ -265,13 +280,13 @@ function ProductsCta() {
 
         {/* Text - Right Side */}
         <div className="flex flex-col justify-center px-6 py-12 lg:px-16 lg:py-16">
-          <p className="font-sans text-[11px] md:text-[12px] font-bold text-[#C9A15D] tracking-[0.15em] uppercase mb-4">
+          <p className="font-sans text-[16px] md:text-[16px] font-bold text-[#C9A15D] tracking-[0.15em] uppercase mb-4">
             CAN'T FIND WHAT YOU'RE LOOKING FOR?
           </p>
           <h2 className="font-heading text-3xl md:text-4xl lg:text-[42px] font-medium text-[#f0e8d4] leading-tight mb-5">
             Let's Create Something<br />Truly Yours
           </h2>
-          <p className="font-sans text-[13px] text-[#a3a3a3] leading-relaxed mb-8 max-w-[420px]">
+          <p className="font-sans text-[16px] text-[#a3a3a3] leading-relaxed mb-8 max-w-[420px]">
             Get in touch with our experts for customised solutions<br className="hidden sm:block" />
             tailored to your unique style and space.
           </p>

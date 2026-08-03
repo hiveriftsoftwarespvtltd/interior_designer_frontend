@@ -13,7 +13,7 @@ import buildingIcon from '../assets/contact/building.png'
 // ─── HERO ─────────────────────────────────────────────────────────────────────
 function ContactHero() {
   return (
-    <section className="relative min-h-[70vh] bg-[#050505] overflow-hidden border-b border-[#C9A15D]/50">
+    <section className="relative min-h-[45vh] bg-[#050505] overflow-hidden border-b border-[#C9A15D]/50">
       <div className="absolute inset-0 z-0">
         <img
           src={contactHeroBg}
@@ -23,26 +23,24 @@ function ContactHero() {
         <div className="absolute inset-0 bg-[#050505]/40" />
       </div>
 
-      <div className="relative section-container pt-32 pb-12 lg:pt-40 lg:pb-20 min-h-[50vh] lg:min-h-[60vh] flex flex-col justify-center">
-        <div className="max-w-2xl">
-          <p className="eyebrow-label mb-4 flex items-center gap-3 text-[#C9A15D]">
-            CONTACT US <span className="block w-8 h-[2px] bg-[#C9A15D]/80" />
+      <div className="relative section-container pt-28 pb-12 min-h-[45vh] flex flex-col justify-center items-center text-center">
+        <div className="max-w-2xl flex flex-col items-center">
+          <p className="text-[#C9A15D] text-[16px] font-bold tracking-[0.2em] uppercase mb-4 flex items-center gap-3 justify-center">
+            CONTACT US
           </p>
           <h1 
-            className="font-heading font-semibold leading-tight text-[#e8e6e3]"
-            style={{
-              fontSize: 'clamp(32px, 6vw, 56px)',
-            }}>
-            Let's Create<br />
-            <span className="text-[#C9A15D]">Extraordinary</span><br />
-            Spaces Together
+            className="font-heading font-medium text-white leading-[1.2] tracking-wide"
+            style={{ fontSize: 'clamp(32px, 6vw, 56px)' }}
+          >
+            Let's Create Extraordinary<br />
+            <span className="text-[#C9A15D]">Spaces Together</span>
           </h1>
-          <div className="flex items-center gap-2 mt-8 mb-8 w-[240px] lg:w-[340px]">
-            <span className="h-px bg-[#C9A15D] flex-grow" />
-            <span className="w-2 h-2 bg-[#C9A15D] rotate-45 flex-shrink-0" />
-            <span className="h-px bg-[#C9A15D] flex-grow" />
+          <div className="flex items-center gap-3 w-64 my-8">
+            <div className="h-px bg-[#C9A15D]/60 flex-1" />
+            <div className="w-2 h-2 bg-[#C9A15D] rotate-45 flex-shrink-0" />
+            <div className="h-px bg-[#C9A15D]/60 flex-1" />
           </div>
-          <p className="font-sans text-[15px] text-[#e8e6e3] leading-[1.8] max-w-lg">
+          <p className="font-sans text-[16px] text-[#e5e5e5] leading-relaxed max-w-lg">
             We'd love to hear from you. Reach out to our team<br className="hidden sm:block" />
             for bespoke interior solutions, product inquiries,<br className="hidden sm:block" />
             or any assistance you need.
@@ -124,8 +122,8 @@ function ContactForm() {
                   <Phone size={18} strokeWidth={1.5} className="transition-transform duration-300 group-hover:scale-125" />
                 </div>
                 <div className="pt-1">
-                  <p className="font-sans text-[11px] font-semibold text-[#e8e6e3] tracking-[0.15em] uppercase mb-1">PHONE</p>
-                  <p className="font-sans text-[14px] text-[#b3b3b3]">8826607109</p>
+                  <p className="font-sans text-[16px] font-semibold text-[#e8e6e3] tracking-[0.15em] uppercase mb-1">PHONE</p>
+                  <p className="font-sans text-[16px] text-[#b3b3b3]">8826607109</p>
                 </div>
               </div>
 
@@ -135,8 +133,8 @@ function ContactForm() {
                   <Mail size={18} strokeWidth={1.5} className="transition-transform duration-300 group-hover:scale-125" />
                 </div>
                 <div className="pt-1">
-                  <p className="font-sans text-[11px] font-semibold text-[#e8e6e3] tracking-[0.15em] uppercase mb-1">EMAIL</p>
-                  <p className="font-sans text-[14px] text-[#b3b3b3]">infinityluxespaces@gmail.com</p>
+                  <p className="font-sans text-[16px] font-semibold text-[#e8e6e3] tracking-[0.15em] uppercase mb-1">EMAIL</p>
+                  <p className="font-sans text-[16px] text-[#b3b3b3]">infinityluxespaces@gmail.com</p>
                 </div>
               </div>
 
@@ -146,12 +144,10 @@ function ContactForm() {
                   <MapPin size={18} strokeWidth={1.5} className="transition-transform duration-300 group-hover:scale-125" />
                 </div>
                 <div className="pt-1">
-                  <p className="font-sans text-[11px] font-semibold text-[#e8e6e3] tracking-[0.15em] uppercase mb-1">ADDRESS</p>
-                  <p className="font-sans text-[14px] text-[#b3b3b3] leading-relaxed">
-                    C-97, Basement,<br />
-                    Sector-33, Noida,<br />
-                    Distt. Gautam Budh Nagar,<br />
-                    Pincode – 201301 (U.P.)
+                  <p className="font-sans text-[16px] font-semibold text-[#e8e6e3] tracking-[0.15em] uppercase mb-1">ADDRESS</p>
+                  <p className="font-sans text-[16px] text-[#b3b3b3] leading-relaxed">
+                    C-97, Basement, Sector-33, Noida,<br />
+                    Distt. Gautam Budh Nagar, Pincode – 201301 (U.P.)
                   </p>
                 </div>
               </div>
@@ -162,9 +158,9 @@ function ContactForm() {
                   <Clock size={18} strokeWidth={1.5} className="transition-transform duration-300 group-hover:scale-125" />
                 </div>
                 <div className="pt-1">
-                  <p className="font-sans text-[11px] font-semibold text-[#C9A15D] tracking-[0.15em] uppercase mb-1">WORKING HOURS</p>
-                  <p className="font-sans text-[14px] text-[#e8e6e3] mb-1">Mon – Sat : 10:00 AM – 7:00 PM</p>
-                  <p className="font-sans text-[14px] text-[#e8e6e3]">Sunday : Closed</p>
+                  <p className="font-sans text-[16px] font-semibold text-[#C9A15D] tracking-[0.15em] uppercase mb-1">WORKING HOURS</p>
+                  <p className="font-sans text-[16px] text-[#e8e6e3] mb-1">Mon – Sat : 10:00 AM – 7:00 PM</p>
+                  <p className="font-sans text-[16px] text-[#e8e6e3]">Sunday : Closed</p>
                 </div>
               </div>
             </div>
@@ -257,7 +253,7 @@ function ContactFeatures() {
               <div className="h-auto flex items-center justify-center -mb-2 z-10">
                 <img src={f.icon} alt={f.line1} className="w-[110px] h-auto object-contain transition-transform duration-300 group-hover:scale-110" />
               </div>
-              <p className="font-sans text-[13.5px] text-[#e8e6e3] leading-[1.6]">
+              <p className="font-sans text-[16px] text-[#e8e6e3] leading-[1.6]">
                 {f.line1}<br />{f.line2}
               </p>
               <div className="w-6 h-px bg-[#C9A15D] mt-4 opacity-70" />
@@ -295,12 +291,12 @@ function MapSection() {
               <img src={buildingIcon} alt="Studio" className="absolute w-[135px] max-w-none object-contain transition-transform duration-300 group-hover:scale-110" />
             </div>
             <div>
-              <p className="font-sans text-[13px] font-semibold text-[#C9A15D] tracking-[0.15em] uppercase mb-2">VISIT OUR STUDIO</p>
+              <p className="font-sans text-[16px] font-semibold text-[#C9A15D] tracking-[0.15em] uppercase mb-2">VISIT OUR STUDIO</p>
               <div className="w-8 h-px bg-[#C9A15D] opacity-70" />
             </div>
           </div>
           
-          <p className="font-sans text-[14.5px] text-[#e8e6e3] leading-[1.8] mt-2">
+          <p className="font-sans text-[16px] text-[#e8e6e3] leading-[1.8] mt-2">
             Experience our exclusive collection<br className="hidden sm:block" />
             and materials in person.
           </p>

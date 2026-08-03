@@ -11,15 +11,16 @@ const quickLinks = [
 ]
 
 const products = [
-  'Curtains & Drapes',
-  'Blinds',
-  'Wallpapers',
-  'Wooden Flooring',
-  'Carpets & Rugs',
-  'Upholstery',
-  'Custom Furniture',
-  'Kitchens & Wardrobes',
-  'Mattresses',
+  { label: 'Curtains & Drapes', to: '/products/curtains-drapes' },
+  { label: 'Blinds', to: '/products/premium-blinds' },
+  { label: 'Wallpapers', to: '/products/exclusive-wallpapers' },
+  { label: 'Wooden Flooring', to: '/products/wooden-flooring' },
+  { label: 'Carpets & Rugs', to: '/products/carpets-rugs' },
+  { label: 'Upholstery', to: '/products/upholstery-leatherettes' },
+  { label: 'Custom Furniture', to: '/products/customised-furniture' },
+  { label: 'Kitchens', to: '/products/modular-kitchens' },
+  { label: 'Wardrobes', to: '/products/wardrobes' },
+  { label: 'Mattresses', to: '/products/mattresses-sleep' },
 ]
 
 // Inline SVG social icons (lucide-react doesn't ship brand icons)
@@ -70,7 +71,7 @@ export default function Footer() {
             <div>
               <img src="/logo_infinity.svg" alt="Infinity Luxe Spaces" className="h-44 w-auto object-contain -my-10 relative z-10" />
             </div>
-            <p className="font-sans text-[11px] text-[#B6B6B6] leading-relaxed">
+            <p className="font-sans text-[15px] text-[#B6B6B6] leading-relaxed">
               Where craft meets comfort,<br />
               infinitely. Creating timeless spaces<br />
               with passion, precision and purpose.
@@ -91,13 +92,13 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div className="lg:px-8 mt-10 lg:mt-0 lg:border-r border-[#C9A15D]/20">
-            <h4 className="text-[#C9A15D] text-[10px] tracking-wider uppercase mb-4 font-semibold">Quick Links</h4>
+            <h4 className="text-[#C9A15D] text-[13px] tracking-wider uppercase mb-4 font-semibold">Quick Links</h4>
             <ul className="flex flex-col gap-2">
               {quickLinks.map((link) => (
                 <li key={link.to}>
                   <Link
                     to={link.to}
-                    className="font-sans text-[12px] text-white/80 hover:text-[#C9A15D] transition-colors duration-200"
+                    className="font-sans text-[14px] text-white/80 hover:text-[#C9A15D] transition-colors duration-200"
                   >
                     {link.label}
                   </Link>
@@ -108,15 +109,15 @@ export default function Footer() {
 
           {/* Our Services */}
           <div className="lg:px-8 mt-10 lg:mt-0 lg:border-r border-[#C9A15D]/20">
-            <h4 className="text-[#C9A15D] text-[10px] tracking-wider uppercase mb-4 font-semibold">Our Services</h4>
+            <h4 className="text-[#C9A15D] text-[13px] tracking-wider uppercase mb-4 font-semibold">Our Services</h4>
             <ul className="flex flex-col gap-[6px]">
               {products.map((product) => (
-                <li key={product}>
+                <li key={product.label}>
                   <Link
-                    to="/products"
-                    className="font-sans text-[11px] text-white/80 hover:text-[#C9A15D] transition-colors duration-200"
+                    to={product.to}
+                    className="font-sans text-[14px] text-white/80 hover:text-[#C9A15D] transition-colors duration-200"
                   >
-                    {product}
+                    {product.label}
                   </Link>
                 </li>
               ))}
@@ -126,21 +127,21 @@ export default function Footer() {
           {/* Contact */}
           <div className="lg:pl-8 mt-10 lg:mt-0 flex flex-col justify-between">
             <div>
-              <h4 className="text-[#C9A15D] text-[10px] tracking-wider uppercase mb-4 font-semibold">Contact Us</h4>
+              <h4 className="text-[#C9A15D] text-[13px] tracking-wider uppercase mb-4 font-semibold">Contact Us</h4>
               <ul className="flex flex-col gap-3">
-                <li className="flex items-center gap-4">
-                  <Phone size={14} className="text-[#C9A15D] flex-shrink-0 transition-transform duration-300 hover:scale-110 hover:-translate-y-1 cursor-pointer" />
-                  <span className="font-sans text-[12px] text-white/80">8826607109</span>
+                <li className="flex items-center gap-4 group cursor-pointer">
+                  <Phone size={14} className="text-[#C9A15D] flex-shrink-0 transition-transform duration-300 group-hover:scale-125" />
+                  <span className="font-sans text-[14px] text-white/80 group-hover:text-[#C9A15D] transition-colors duration-300">8826607109</span>
                 </li>
-                <li className="flex items-center gap-4">
-                  <Mail size={14} className="text-[#C9A15D] flex-shrink-0 transition-transform duration-300 hover:scale-110 hover:-translate-y-1 cursor-pointer" />
-                  <span className="font-sans text-[12px] text-white/80">infinityluxespaces@gmail.com</span>
+                <li className="flex items-center gap-4 group cursor-pointer">
+                  <Mail size={14} className="text-[#C9A15D] flex-shrink-0 transition-transform duration-300 group-hover:scale-125" />
+                  <span className="font-sans text-[14px] text-white/80 group-hover:text-[#C9A15D] transition-colors duration-300">infinityluxespaces@gmail.com</span>
                 </li>
-                <li className="flex items-center gap-4">
-                  <MapPin size={14} className="text-[#C9A15D] flex-shrink-0 transition-transform duration-300 hover:scale-110 hover:-translate-y-1 cursor-pointer" />
-                  <span className="font-sans text-[12px] text-white/80 leading-relaxed">
-                    C-97, Basement,<br />
-                    Sector-33, Noida,<br />
+                <li className="flex items-center gap-4 group cursor-pointer">
+                  <MapPin size={14} className="text-[#C9A15D] flex-shrink-0 transition-transform duration-300 group-hover:scale-125" />
+                  <span className="font-sans text-[14px] text-white/80 group-hover:text-[#C9A15D] transition-colors duration-300 leading-relaxed">
+                    C-97, Basement,
+                    Sector-33, Noida,
                     Distt. Gautam Budh Nagar,<br />
                     Pincode – 201301 (U.P.)
                   </span>
@@ -164,15 +165,10 @@ export default function Footer() {
 
       {/* Bottom Bar */}
       <div className="border-t border-gold-border/10">
-        <div className="section-container py-4 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <p className="font-sans text-xs text-text-paragraph">
-            © 2024 Infinity Luxe Spaces. All Rights Reserved.
+        <div className="section-container py-4 flex flex-col items-center justify-center gap-3">
+          <p className="font-sans text-[16px] text-text-paragraph text-center">
+            © 2026 Infinity Luxe Spaces. All Rights Reserved.
           </p>
-          <div className="flex items-center gap-6">
-            <a href="#" className="font-sans text-xs text-text-paragraph hover:text-gold-primary transition-colors">Privacy Policy</a>
-            <span className="text-gold-border/40">|</span>
-            <a href="#" className="font-sans text-xs text-text-paragraph hover:text-gold-primary transition-colors">Terms & Conditions</a>
-          </div>
         </div>
       </div>
     </footer>

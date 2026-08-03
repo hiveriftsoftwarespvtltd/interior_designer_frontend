@@ -21,7 +21,7 @@ import letsCreateBg from "../assets/client/let's_create.png"
 // ─── HERO ─────────────────────────────────────────────────────────────────────
 function ClientsHero() {
   return (
-    <section className="relative min-h-[70vh] bg-[#050505] overflow-hidden border-b border-[#C9A15D]/50">
+    <section className="relative min-h-[45vh] bg-[#050505] overflow-hidden border-b border-[#C9A15D]/50">
       <div className="absolute inset-0 z-0">
         <img
           src={heroBgImage}
@@ -30,24 +30,23 @@ function ClientsHero() {
         />
         <div className="absolute inset-0 bg-[#050505]/40" />
       </div>
-      <div className="relative section-container pt-32 pb-12 lg:pt-40 lg:pb-20 min-h-[70vh] flex flex-col justify-center">
-        <div className="max-w-2xl">
-          <p className="eyebrow-label mb-4 flex items-center gap-2">
-            Our Clients <span className="inline-block w-6 h-px bg-[#C9A15D]" />
+      <div className="relative section-container pt-28 pb-12 min-h-[45vh] flex flex-col justify-center items-center text-center">
+        <div className="max-w-3xl flex flex-col items-center">
+          <p className="text-[#C9A15D] text-[16px] font-bold tracking-[0.2em] uppercase mb-4 flex items-center gap-2 justify-center">
+            Our Clients 
           </p>
           <h1 
-            className="font-heading font-semibold text-text-heading leading-tight"
-            style={{ fontSize: 'clamp(36px, 8vw, 56px)' }}
+            className="font-heading font-medium text-white leading-[1.2] tracking-wide"
+            style={{ fontSize: 'clamp(32px, 6vw, 56px)' }}
           >
-            Trusted by Leaders.<br />
-            <span className="text-[#C9A15D]">Inspired by Excellence.</span>
+            Trusted by Leaders. <span className="text-[#C9A15D]">Inspired by Excellence.</span>
           </h1>
-          <div className="flex items-center gap-2 mt-8 mb-8 w-full max-w-[320px] lg:max-w-[680px]">
-            <span className="h-px bg-[#C9A15D] flex-grow" />
-            <span className="w-2 h-2 bg-[#C9A15D] rotate-45 flex-shrink-0" />
-            <span className="h-px bg-[#C9A15D] flex-grow" />
+          <div className="flex items-center gap-3 w-64 my-8">
+            <div className="h-px bg-[#C9A15D]/60 flex-1" />
+            <div className="w-2 h-2 bg-[#C9A15D] rotate-45 flex-shrink-0" />
+            <div className="h-px bg-[#C9A15D]/60 flex-1" />
           </div>
-          <p className="font-sans text-sm text-text-paragraph leading-relaxed max-w-md">
+          <p className="font-sans text-[16px] text-[#e5e5e5] leading-relaxed max-w-lg">
             We are proud to collaborate with visionary brands and prestigious names across industries. Together, we create extraordinary spaces that leave a lasting impression.
           </p>
         </div>
@@ -76,7 +75,7 @@ function ClientsStatsBar() {
               </div>
               <div className="relative z-10">
                 {s.value && <p className="font-sans text-[20px] font-medium text-[#e8e6e3] leading-none mb-1">{s.value}</p>}
-                <p className="font-sans text-[12px] text-[#b3b3b3] leading-[1.4] whitespace-pre-line">{s.label}</p>
+                <p className="font-sans text-[16px] text-[#b3b3b3] leading-[1.4] whitespace-pre-line">{s.label}</p>
               </div>
             </div>
           ))}
@@ -226,7 +225,7 @@ function Testimonials() {
                     </blockquote>
                     <div className="flex items-center gap-2 mt-4 mb-2">
                       <span className="font-sans text-[14px] text-[#C9A15D] font-medium">—</span>
-                      <p className="font-sans text-[14px] text-[#C9A15D] font-medium">
+                      <p className="font-sans text-[16px] text-[#C9A15D] font-medium">
                         {t.author}
                       </p>
                     </div>
@@ -287,7 +286,7 @@ function ClientsCta() {
               <h2 className="font-heading text-3xl lg:text-5xl text-[#C9A15D] leading-tight mb-3">
                 Extraordinary Spaces Together
               </h2>
-              <p className="font-sans text-[13px] lg:text-[15px] text-[#b3b3b3] leading-relaxed">
+              <p className="font-sans text-[16px] lg:text-[16px] text-[#b3b3b3] leading-relaxed">
                 Join hands with Infinity Luxe Spaces and experience<br className="hidden sm:block" />
                 world-class craftsmanship, elegance, and reliability.
               </p>
