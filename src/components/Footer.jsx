@@ -68,9 +68,9 @@ export default function Footer() {
         <div className="grid grid-cols-1 lg:grid-cols-4">
           {/* Brand Column */}
           <div className="flex flex-col gap-6 lg:pr-8 lg:border-r border-[#C9A15D]/20">
-            <div>
-              <img src="/logo_infinity.svg" alt="Infinity Luxe Spaces" className="h-44 w-auto object-contain -my-10 relative z-10" />
-            </div>
+            <Link to="/" className="inline-block w-fit group">
+              <img src="/logo_infinity.svg" alt="Infinity Luxe Spaces" className="h-44 w-auto object-contain -my-10 relative z-10 transition-transform duration-300 group-hover:scale-105" />
+            </Link>
             <p className="font-sans text-[15px] text-[#B6B6B6] leading-relaxed">
               Where craft meets comfort,<br />
               infinitely. Creating timeless spaces<br />

@@ -37,18 +37,17 @@ function ServicesHero() {
           alt="Services hero"
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-black/60" />
       </div>
       <div className="relative section-container pt-28 pb-12 min-h-[45vh] flex flex-col justify-center items-center text-center">
         <div className="max-w-3xl flex flex-col items-center">
-          <p className="text-[#C9A15D] text-[16px] font-bold tracking-[0.2em] uppercase mb-4">
+          <p className="text-[#C9A15D] text-[16px] font-bold tracking-[0.1em] uppercase mb-4">
             OUR SERVICES
           </p>
           <h1
             className="font-heading font-medium text-white leading-[1.2] tracking-wide"
             style={{ fontSize: 'clamp(32px, 6vw, 56px)' }}
           >
-            Crafted to Perfection. <span className="text-[#C9A15D]">Designed for You.</span>
+            Crafted with Precision. <span className="text-[#C9A15D]">Designed for Life.</span>
           </h1>
 
           <div className="flex items-center gap-3 w-64 my-8">
@@ -57,8 +56,8 @@ function ServicesHero() {
             <div className="h-px bg-[#C9A15D]/60 flex-1" />
           </div>
 
-          <p className="font-sans text-[16px] text-[#e5e5e5] leading-relaxed max-w-lg">
-            At Infinity Luxe Spaces, we offer a curated range of premium furnishing and interior solutions that combine timeless craftsmanship, global materials, and personalized design to elevate every space.
+          <p className="font-sans text-[16px] text-[#e5e5e5] leading-relaxed max-w-3xl lg:max-w-4xl">
+            We offer bespoke furnishing and interior solutions that combine timeless craftsmanship, curated global materials, and personalized design to transform residential, commercial, and hospitality spaces into enduring expressions of luxury.
           </p>
         </div>
       </div>
@@ -70,57 +69,57 @@ function ServicesHero() {
 const services = [
   {
     num: '01',
-    title: 'Customised\nCurtains & Drapes',
-    desc: 'Tailored fabrics and premium drapery solutions to enhance light, privacy, and aesthetics.',
+    title: 'Curtains',
+    desc: 'Bespoke curtains and drapery solutions crafted to enhance comfort, privacy, and timeless elegance.',
     img: e2e1,
     icon: prodIcon1,
   },
   {
     num: '02',
-    title: 'Premium Blinds',
-    desc: 'A wide range of blinds including Roller, Zebra, Roman, Venetian & Honeycomb for every need.',
+    title: 'Blinds',
+    desc: 'Premium Roller, Zebra, Roman, Venetian, and Honeycomb blinds designed for style, functionality, and light control.',
     img: e2e2,
     icon: prodIcon2,
   },
   {
     num: '03',
-    title: 'Exclusive\nWallpapers',
-    desc: 'International collections and custom-made wallpapers to add texture and personality.',
+    title: 'Wallpapers',
+    desc: 'Curated international wallpaper collections that add depth, texture, and character to every interior.',
     img: e2e3,
     icon: prodIcon3,
   },
   {
     num: '04',
     title: 'Wooden Flooring',
-    desc: 'Elegant wooden flooring options that add warmth, durability and timeless beauty.',
+    desc: 'Premium wooden flooring solutions that combine natural warmth, lasting durability, and timeless sophistication.',
     img: e2e4,
     icon: prodIcon4,
   },
   {
     num: '05',
-    title: 'Carpets & Rugs',
-    desc: 'Luxury carpets, area rugs & carpet tiles to bring comfort, style and sophistication.',
+    title: 'Carpets',
+    desc: 'Luxury carpets and designer rugs that bring warmth, comfort, and refined elegance to every space.',
     img: e2e5,
     icon: prodIcon5,
   },
   {
     num: '06',
-    title: 'Upholstery &\nLeatherettes',
-    desc: 'Premium fabrics and leatherette finishes for furniture, walls, and bespoke applications.',
+    title: 'Upholstery',
+    desc: 'Premium upholstery fabrics and leatherettes tailored for furniture, wall panels, and bespoke interior applications.',
     img: e2e6,
     icon: prodIcon6,
   },
   {
     num: '07',
-    title: 'Customised\nFurniture',
-    desc: 'Made-to-order furniture designed around your space, style and functionality.',
+    title: 'Furniture',
+    desc: 'Custom-crafted furniture designed to complement your space, lifestyle, and personal aesthetic.',
     img: e2e7,
     icon: prodIcon7,
   },
   {
     num: '08',
-    title: 'Mattresses &\nSleep Solutions',
-    desc: 'High-quality mattresses and sleep solutions for unmatched comfort and support.',
+    title: 'Mattresses',
+    desc: 'Luxury mattresses and sleep solutions engineered for exceptional comfort, support, and restorative rest.',
     img: e2e8,
     icon: prodIcon8,
   },
@@ -137,7 +136,7 @@ function ServicesGrid() {
             OUR SERVICES
           </p>
           <h2 className="font-heading text-3xl lg:text-[34px] text-white font-medium mb-6">
-            End-to-End Furnishing & Interior Solutions
+            Complete Interior & Furnishing Solutions
           </h2>
 
           <div className="flex items-center gap-3 w-[90%] max-w-[650px]">
@@ -198,7 +197,7 @@ function ServicesGrid() {
 // ─── TURNKEY SECTION ─────────────────────────────────────────────────────────
 const turnkeySteps = [
   { icon: turnkeyIcon1, label: 'Design\nConsultation' },
-  { icon: turnkeyIcon2, label: 'Material\nSelection' },
+  { icon: turnkeyIcon2, label: 'Curated\nMaterial Selection' },
   { icon: turnkeyIcon3, label: 'Execution &\nInstallation' },
   { icon: turnkeyIcon4, label: 'Final Styling &\nHandover' },
 ]
@@ -220,7 +219,7 @@ function TurnkeySection() {
               Turnkey Interior<br />Solutions
             </h2>
             <p className="font-sans text-[16px] text-[#cccccc] leading-relaxed mb-10 max-w-[90%]">
-              From concept to completion, we manage every detail so you can enjoy a seamless, stress-free experience.
+              From concept and design to execution and final styling, we manage every detail to deliver a seamless luxury interior experience.
             </p>
 
             <div className="grid grid-cols-2 md:grid-cols-4 gap-y-12 md:gap-y-0 w-full mt-10">
@@ -269,8 +268,8 @@ function ServicesCta() {
           {/* Middle: Paragraph */}
           <div className="w-full lg:flex-1 lg:max-w-md lg:px-4">
             <p className="font-sans text-[16px] text-[#cccccc] leading-[1.6]">
-              Let our team of experts bring your vision to life<br className="hidden lg:block" />
-              with bespoke solutions and impeccable execution.
+              Let our design experts transform your vision into an extraordinary space<br className="hidden lg:block" />
+              with bespoke craftsmanship and flawless execution.
             </p>
           </div>
 

@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { NavLink, Link } from 'react-router-dom'
 import { ArrowRight, Menu, X } from 'lucide-react'
+import { useModal } from '../context/ModalContext'
 
 const navLinks = [
   { label: 'Home', to: '/' },
@@ -14,6 +15,7 @@ const navLinks = [
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
+  const { openContactModal } = useModal()
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40)
@@ -23,16 +25,15 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? 'bg-luxury-black/95 backdrop-blur-sm border-b border-gold-border/20' : 'bg-transparent'
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-luxury-black/80 backdrop-blur-sm border-b border-gold-border/20' : 'bg-transparent'
+        }`}
     >
       <div className="section-container">
         <div className="flex items-center justify-between py-4">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3 group">
             <div className="flex flex-col items-center">
-              <img src="/logo_infinity.svg" alt="Infinity Luxe Spaces" className="h-32 w-auto object-contain -my-9 relative z-10" />
+              <img src="/logo_infinity.svg" alt="Infinity Luxe Spaces" className="h-40 w-auto object-contain -my-12 relative z-10 transition-transform duration-300 group-hover:scale-105" />
             </div>
           </Link>
 
@@ -43,8 +44,7 @@ export default function Navbar() {
                 key={link.to}
                 to={link.to}
                 className={({ isActive }) =>
-                  `font-sans text-xs font-semibold tracking-[0.15em] uppercase transition-colors duration-200 relative pb-1 ${
-                    isActive ? 'text-gold-primary border-b-2 border-gold-primary' : 'text-text-secondary hover:text-gold-primary'
+                  `font-sans text-xs font-semibold tracking-[0.15em] uppercase transition-colors duration-200 relative pb-1 ${isActive ? 'text-gold-primary border-b-2 border-gold-primary' : 'text-text-secondary hover:text-gold-primary'
                   }`
                 }
               >
@@ -54,12 +54,12 @@ export default function Navbar() {
           </nav>
 
           {/* CTA Button */}
-          <Link
-            to="/contact"
+          <button
+            onClick={openContactModal}
             className="hidden lg:inline-flex items-center gap-2 border border-gold-primary text-gold-primary font-sans font-semibold text-xs tracking-widest uppercase px-6 py-2 transition-all duration-300 hover:bg-gold-primary hover:text-luxury-black"
           >
             LET'S TALK
-          </Link>
+          </button>
 
           {/* Mobile toggle */}
           <button
@@ -85,13 +85,15 @@ export default function Navbar() {
                 {link.label}
               </NavLink>
             ))}
-            <Link
-              to="/contact"
-              onClick={() => setMobileOpen(false)}
+            <button
+              onClick={() => {
+                setMobileOpen(false);
+                openContactModal();
+              }}
               className="btn-outline w-fit mt-2"
             >
               Let's Talk <ArrowRight size={12} className="transition-transform duration-300 hover:translate-x-1" />
-            </Link>
+            </button>
           </div>
         )}
       </div>

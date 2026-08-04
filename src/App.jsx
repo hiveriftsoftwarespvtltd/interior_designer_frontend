@@ -9,22 +9,27 @@ import Products from './pages/Products'
 import ProductDetail from './pages/ProductDetail'
 import Clients from './pages/Clients'
 import Contact from './pages/Contact'
+import { ModalProvider } from './context/ModalContext'
+import ContactModal from './components/ContactModal'
 
 export default function App() {
   return (
-    <BrowserRouter>
-      <ScrollToTop />
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/services" element={<Services />} />
-        <Route path="/products" element={<Products />} />
-        <Route path="/products/:slug" element={<ProductDetail />} />
-        <Route path="/clients" element={<Clients />} />
-        <Route path="/contact" element={<Contact />} />
-      </Routes>
-      <Footer />
-    </BrowserRouter>
+    <ModalProvider>
+      <BrowserRouter>
+        <ScrollToTop />
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/services" element={<Services />} />
+          <Route path="/products" element={<Products />} />
+          <Route path="/products/:slug" element={<ProductDetail />} />
+          <Route path="/clients" element={<Clients />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
+        <ContactModal />
+        <Footer />
+      </BrowserRouter>
+    </ModalProvider>
   )
 }

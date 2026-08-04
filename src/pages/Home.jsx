@@ -1,4 +1,6 @@
 import { Link } from 'react-router-dom'
+
+import { useModal } from '../context/ModalContext'
 import { ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react'
 import heroBanner from '../assets/home/hero_banner.png'
 import icon25Years from '../assets/home/25+ years.png'
@@ -21,12 +23,17 @@ import prodIcon5 from '../assets/product/crapets.png'
 import prodIcon6 from '../assets/product/upholstery.png'
 import prodIcon7 from '../assets/product/customised_furniture.png'
 import prodIcon8 from '../assets/product/mattresses.png'
-import clientUdman from '../assets/home/prestigious _clients_udman_hotel.png'
-import clientAarone from '../assets/home/prestigious _clients_aarone.png'
-import clientEros from '../assets/home/prestigious _clients_eros_group.png'
-import clientIgi from '../assets/home/prestigious _clients_igi_airport.png'
-import clientSelect from '../assets/home/prestigious _clients_select_infra.png'
-import clientTivoli from '../assets/home/prestigious _clients_tivoli.png'
+import clientLogo1 from '../assets/home/udman hotel.svg'
+import clientLogo2 from '../assets/home/eros group.svg'
+import clientLogo3 from '../assets/home/select Group.svg'
+import clientLogo4 from '../assets/home/the tivoli.svg'
+import clientLogo5 from '../assets/home/lucky star.svg'
+import clientLogo6 from '../assets/home/bigjos.svg'
+import clientLogo7 from '../assets/home/Toeler.svg'
+import clientLogo8 from '../assets/home/TURNER.svg'
+import clientLogo9 from '../assets/home/Aarone.svg'
+import clientLogo10 from '../assets/home/delhi_indira.svg'
+import clientLogo11 from '../assets/home/fnp.svg'
 import aboutCrafting from '../assets/home/crafting_space.png'
 import ctaBg from "../assets/home/Let's_create.png"
 import whyIcon1 from '../assets/home/luxury_difference_desgin.png'
@@ -64,6 +71,8 @@ function SectionDivider() {
 
 // ─── SECTION 1: HERO ──────────────────────────────────────────────────────
 function Hero() {
+  const { openContactModal } = useModal();
+  
   return (
     <div className="relative w-full overflow-hidden flex flex-col justify-center pt-32 pb-12 lg:pt-40 lg:pb-20 flex-grow">
       {/* Content */}
@@ -79,13 +88,13 @@ function Hero() {
               lineHeight: 1.15,
             }}
           >
-            WHERE CRAFT MEETS <br />
+            Where Vision<br />
             <span
               style={{
                 color: '#C9A15D',
               }}
             >
-              COMFORT,INFINITELY
+               Becomes Reality
             </span>
           </h1>
 
@@ -98,11 +107,8 @@ function Hero() {
 
           {/* Tagline row */}
           <div className="flex flex-col gap-3 mt-10 items-center justify-center text-center">
-            <p className="font-sans text-[16px] lg:text-[18px] font-normal tracking-wide text-text-secondary flex flex-wrap items-center justify-center gap-2 sm:gap-3">
-              Bespoke Interiors <span className="text-gold-primary text-[12px]">◆</span> Premium Furnishings
-            </p>
-            <p className="font-sans text-[16px] lg:text-[18px] font-normal tracking-wide text-text-secondary">
-              Turnkey Design Solutions
+            <p className="font-sans text-[16px] lg:text-[18px] font-normal tracking-wide text-text-secondary flex flex-wrap items-center justify-center gap-2 sm:gap-3 max-w-3xl">
+              With 25+ years of expertise, we transform residential, commercial, and hospitality spaces into timeless expressions of luxury.
             </p>
           </div>
 
@@ -115,13 +121,13 @@ function Hero() {
             >
               EXPLORE OUR PRODUCTS
             </Link>
-            <Link
-              to="/contact"
+            <button
+              onClick={openContactModal}
               className="inline-flex items-center justify-center font-sans font-bold text-[14px] tracking-wider uppercase px-8 py-4 transition-all duration-300 hover:bg-gold-primary hover:text-luxury-black w-full sm:w-auto sm:min-w-[240px] rounded-[2px]"
               style={{ border: '1px solid #C9A15D', color: '#F5F2EB' }}
             >
               SCHEDULE CONSULTATION
-            </Link>
+            </button>
           </div>
         </div>
       </div>
@@ -133,28 +139,28 @@ function Hero() {
 const statsData = [
   {
     svgIcon: (
-      <img src={icon25Years} alt="25+ years" className="w-16 md:w-24 h-auto -my-2 md:-my-6" />
+      <img src={icon25Years} alt="25+ years" className="w-16 md:w-20 h-auto -my-1 lg:-my-3" />
     ),
     value: '25+',
     label: 'Years of Combined\nLeadership Expertise',
   },
   {
     svgIcon: (
-      <img src={iconCategories} alt="10+ categories" className="w-16 md:w-24 h-auto -my-2 md:-my-6" />
+      <img src={iconCategories} alt="10+ categories" className="w-16 md:w-20 h-auto -my-1 lg:-my-3" />
     ),
     value: '10+',
     label: 'Categories of\nBespoke Craftsmanship',
   },
   {
     svgIcon: (
-      <img src={icon11Clients} alt="11+ clients" className="w-16 md:w-24 h-auto -my-2 md:-my-6" />
+      <img src={icon11Clients} alt="11+ clients" className="w-16 md:w-20 h-auto -my-1 lg:-my-3" />
     ),
     value: '11+',
     label: 'Prestigious Clients\nAcross Sectors',
   },
   {
     svgIcon: (
-      <img src={iconTurnkey} alt="Turnkey solutions" className="w-16 md:w-24 h-auto -my-2 md:-my-6" />
+      <img src={iconTurnkey} alt="Turnkey solutions" className="w-16 md:w-20 h-auto -my-1 lg:-my-3" />
     ),
     value: 'Turnkey',
     label: 'End-to-End\nSolutions',
@@ -165,18 +171,20 @@ function StatsBar() {
   return (
     <div className="border-t border-gold-border/30 relative z-10 -mt-1 bg-luxury-black">
       <div className="max-w-7xl mx-auto px-6 lg:px-14 py-8">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-4 lg:gap-x-6 gap-y-10">
           {statsData.map((s, i) => (
-            <div key={i} className="flex items-center gap-5">
-              <div className="flex-shrink-0 text-gold-primary scale-[1.5] origin-left transition-transform duration-300 hover:scale-[1.7] cursor-pointer">{s.svgIcon}</div>
+            <div key={i} className="flex items-center gap-3 lg:gap-4">
+              <div className="flex-shrink-0 text-gold-primary origin-left transition-transform duration-300 hover:scale-[1.2] cursor-pointer">
+                {s.svgIcon}
+              </div>
               <div className="flex flex-col">
                 <p
                   className="text-text-heading"
-                  style={{ fontFamily: '"Montserrat", sans-serif', fontWeight: 600, fontSize: '22px', lineHeight: 1.1 }}
+                  style={{ fontFamily: '"Montserrat", sans-serif', fontWeight: 600, fontSize: '20px', lineHeight: 1.1 }}
                 >
                   {s.value}
                 </p>
-                <p className="font-sans text-[16px] text-text-paragraph leading-relaxed mt-1 whitespace-pre-line">
+                <p className="font-sans text-[12px] lg:text-[13px] xl:text-[14px] text-text-paragraph leading-snug mt-1 whitespace-pre-line">
                   {s.label}
                 </p>
               </div>
@@ -222,10 +230,10 @@ function AboutPreview() {
 
             <div className="flex flex-col gap-4 mt-1">
               <p className="font-sans text-[16px] text-text-paragraph leading-relaxed">
-                Infinity Luxe Spaces is a premium furnishing and interior solutions firm redefining luxury living through bespoke design and timeless craftsmanship.
+                At Infinity Luxe Spaces, we create bespoke interiors that blend luxury, functionality, and timeless craftsmanship. Backed by 25+ years of leadership expertise, we transform residential, commercial, and hospitality spaces using curated materials, innovative design, and precision execution to deliver elegant environments that reflect individuality and enduring quality.
               </p>
               <p className="font-sans text-[16px] text-text-paragraph leading-relaxed">
-                With a legacy of trust and taste, we bring together design intelligence, curated global materials, and precision execution — transforming residential, commercial, and hospitality spaces into environments that feel unmistakably yours.
+                Infinity Luxe Spaces crafts bespoke luxury interiors with curated materials, expert craftsmanship, and innovative design, creating timeless residential, commercial, and hospitality spaces tailored to reflect your unique vision.
               </p>
             </div>
 
@@ -256,57 +264,57 @@ function AboutPreview() {
 // ─── SECTION 4: PRODUCTS / CRAFT GRID ────────────────────────────────────
 const productItems = [
   {
-    title: 'Customised\nCurtains & Drapes',
-    desc: 'Tailored to your light,\nmood, and architecture',
+    title: 'Curtains',
+    desc: 'Bespoke curtains and drapery solutions crafted to enhance comfort, privacy, and timeless elegance.',
     img: prod1,
     icon: prodIcon1,
     slug: 'curtains-drapes'
   },
   {
-    title: 'Premium Blinds',
-    desc: 'Venetian, Roller, Zebra,\nRoman & Honeycomb\n– sunscreen & blackout\nmaterials',
+    title: 'Blinds',
+    desc: 'Premium Roller, Zebra, Roman, Venetian, and Honeycomb blinds designed for style, functionality, and light control.',
     img: prod2,
     icon: prodIcon2,
     slug: 'premium-blinds'
   },
   {
-    title: 'Exclusive\nWallpapers',
-    desc: 'International collections\nplus made-to-order\ndesigns',
+    title: 'Wallpapers',
+    desc: 'Curated international wallpaper collections that add depth, texture, and character to every interior.',
     img: prod3,
     icon: prodIcon3,
     slug: 'exclusive-wallpapers'
   },
   {
-    title: 'Wooden\nFlooring',
-    desc: 'Warmth, durability,\nand a refined finish',
+    title: 'Wooden Flooring',
+    desc: 'Premium wooden flooring solutions that combine natural warmth, lasting durability, and timeless sophistication.',
     img: prod4,
     icon: prodIcon4,
     slug: 'wooden-flooring'
   },
   {
-    title: 'Carpets & Rugs',
-    desc: 'Wall-to-wall, carpet tiles,\nrugs, vinyl & sports\nflooring for every\nspecification',
+    title: 'Carpets',
+    desc: 'Luxury carpets and designer rugs that bring warmth, comfort, and refined elegance to every space.',
     img: prod5,
     icon: prodIcon5,
     slug: 'carpets-rugs'
   },
   {
-    title: 'Upholstery &\nLeatherettes',
-    desc: 'Rich textures for sofas,\nchairs, and headboards\n– including luxurious,\nsupple & resilient\nleatherettes',
+    title: 'Upholstery',
+    desc: 'Premium upholstery fabrics and leatherettes tailored for furniture, wall panels, and bespoke interior applications.',
     img: prod6,
     icon: prodIcon6,
     slug: 'upholstery-leatherettes'
   },
   {
-    title: 'Customised\nFurniture',
-    desc: 'Statement pieces built\nto fit your space\nand style',
+    title: 'Furniture',
+    desc: 'Custom-crafted furniture designed to complement your space, lifestyle, and personal aesthetic.',
     img: prod7,
     icon: prodIcon7,
     slug: 'customised-furniture'
   },
   {
-    title: 'Mattresses &\nSleep Solutions',
-    desc: 'All types, from the best\nbrands, for residential\n& hospitality use',
+    title: 'Mattresses',
+    desc: 'Luxury mattresses and sleep solutions engineered for exceptional comfort, support, and restorative rest.',
     img: prod8,
     icon: prodIcon8,
     slug: 'mattresses-sleep'
@@ -384,7 +392,7 @@ function ProductsGrid() {
                 >
                   {item.desc}
                 </p>
-                
+
                 {/* Fixed Arrow Button at Bottom */}
                 <div className="absolute bottom-6 left-1/2 -translate-x-1/2">
                   <span className="block text-[#C9A15D] text-xl leading-none transition-transform duration-300 group-hover:translate-x-2">→</span>
@@ -572,12 +580,17 @@ function PortfolioPreview() {
 
 // ─── SECTION 7: CLIENTS STRIP ─────────────────────────────────────────────
 const clientLogos = [
-  clientUdman,
-  clientAarone,
-  clientEros,
-  clientIgi,
-  clientSelect,
-  clientTivoli,
+  clientLogo1,
+  clientLogo2,
+  clientLogo3,
+  clientLogo4,
+  clientLogo5,
+  clientLogo6,
+  clientLogo7,
+  clientLogo8,
+  clientLogo9,
+  clientLogo10,
+  clientLogo11,
 ]
 
 function ClientsStrip() {
@@ -586,30 +599,21 @@ function ClientsStrip() {
       <div className="max-w-7xl mx-auto px-8 lg:px-14">
         <Eyebrow text="Our Prestigious Clients" centered />
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 mt-8">
-          {clientLogos.map((logo, i) => (
-            <div
-              key={i}
-              className="flex items-center justify-center group cursor-pointer"
-              style={{ height: '100px' }}
-            >
-              <div className="w-full h-full transition-transform duration-500 group-hover:scale-110 group-hover:-translate-y-1">
-                <div
-                  className="w-full h-full scale-[2.2] bg-[#C9A15D] opacity-80 group-hover:opacity-100 transition-opacity duration-500 flex-shrink-0 pointer-events-none"
-                  style={{
-                    WebkitMaskImage: `url(${logo})`,
-                    maskImage: `url(${logo})`,
-                    WebkitMaskSize: 'contain',
-                    maskSize: 'contain',
-                    WebkitMaskPosition: 'center',
-                    maskPosition: 'center',
-                    WebkitMaskRepeat: 'no-repeat',
-                    maskRepeat: 'no-repeat',
-                  }}
+        <div className="clients-marquee-wrapper mt-12 mb-8">
+          <div className="clients-marquee-track gap-10 lg:gap-16">
+            {[...clientLogos, ...clientLogos].map((logo, i) => (
+              <div
+                key={i}
+                className="flex items-center justify-center flex-shrink-0"
+              >
+                <img 
+                  src={logo} 
+                  alt="Client Logo" 
+                  className="h-[80px] md:h-[110px] w-auto max-w-none object-contain transition-all duration-500 opacity-80 hover:opacity-100 hover:scale-110 cursor-pointer" 
                 />
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
 
         <div className="flex justify-center mt-7">
@@ -732,6 +736,8 @@ function HomeCta() {
 
 // ─── HOME PAGE ────────────────────────────────────────────────────────────
 export default function Home() {
+  const { openContactModal } = useModal();
+  
   return (
     <main>
       <section className="relative w-full flex flex-col justify-between" style={{ minHeight: '80vh' }}>
@@ -742,6 +748,7 @@ export default function Home() {
             alt="Luxury interior design"
             className="w-full h-full object-cover object-center"
           />
+          <div className="absolute inset-0 bg-black/40" />
         </div>
         <div className="relative z-10">
           <Hero />

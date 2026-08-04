@@ -23,12 +23,30 @@
     overflow-x: hidden;
   }
 
-  h1, h2, h3, h4 {
+  h1,
+  h2,
+  h3,
+  h4 {
     font-family: 'Playfair Display', serif;
   }
 }
 
 @layer components {
+  .clients-marquee-wrapper {
+    overflow: hidden;
+    width: 100%;
+    display: flex;
+  }
+  .clients-marquee-track {
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    animation: marquee-scroll 35s linear infinite;
+  }
+  .clients-marquee-wrapper:hover .clients-marquee-track {
+    animation-play-state: paused;
+  }
+
   .gold-divider {
     @apply w-12 h-px bg-gold-primary;
   }
@@ -83,19 +101,19 @@
   }
 
   .hero-overlay {
-    background: linear-gradient(to right, rgba(5,5,5,0.92) 40%, rgba(5,5,5,0.4) 100%);
+    background: linear-gradient(to right, rgba(5, 5, 5, 0.92) 40%, rgba(5, 5, 5, 0.4) 100%);
   }
 
   .hero-overlay-full {
-    background: linear-gradient(to bottom, rgba(5,5,5,0.6) 0%, rgba(5,5,5,0.85) 100%);
+    background: linear-gradient(to bottom, rgba(5, 5, 5, 0.6) 0%, rgba(5, 5, 5, 0.85) 100%);
   }
 
   .section-overlay {
-    background: linear-gradient(to right, rgba(5,5,5,0.88) 0%, rgba(5,5,5,0.4) 100%);
+    background: linear-gradient(to right, rgba(5, 5, 5, 0.88) 0%, rgba(5, 5, 5, 0.4) 100%);
   }
 
   .img-card-overlay {
-    background: linear-gradient(to top, rgba(5,5,5,0.9) 0%, rgba(5,5,5,0.2) 60%, transparent 100%);
+    background: linear-gradient(to top, rgba(5, 5, 5, 0.9) 0%, rgba(5, 5, 5, 0.2) 60%, transparent 100%);
   }
 }
 
@@ -103,7 +121,15 @@
 ::-webkit-scrollbar {
   display: none;
 }
+
 * {
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+  -ms-overflow-style: none;
+  /* IE and Edge */
+}
+
+@keyframes marquee-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }

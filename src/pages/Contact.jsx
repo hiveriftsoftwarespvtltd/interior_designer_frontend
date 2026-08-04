@@ -1,7 +1,6 @@
-import { useState } from 'react'
-import { Link } from 'react-router-dom'
 import { ArrowRight, Phone, Mail, MapPin, Clock } from 'lucide-react'
 import { GoldDivider } from '../components/ui'
+import ContactForm from '../components/ContactForm'
 
 import contactHeroBg from '../assets/contact/contact_banner.png'
 import featIcon1 from '../assets/contact/personalised.png'
@@ -25,25 +24,23 @@ function ContactHero() {
 
       <div className="relative section-container pt-28 pb-12 min-h-[45vh] flex flex-col justify-center items-center text-center">
         <div className="max-w-2xl flex flex-col items-center">
-          <p className="text-[#C9A15D] text-[16px] font-bold tracking-[0.2em] uppercase mb-4 flex items-center gap-3 justify-center">
+          <p className="text-[#C9A15D] text-[16px] font-bold tracking-[0.1em] uppercase mb-4 flex items-center gap-3 justify-center">
             CONTACT US
           </p>
           <h1 
-            className="font-heading font-medium text-white leading-[1.2] tracking-wide"
-            style={{ fontSize: 'clamp(32px, 6vw, 56px)' }}
+            className="font-heading font-medium text-white leading-[1.2] tracking-wide flex flex-col items-center"
+            style={{ fontSize: 'clamp(26px, 6vw, 56px)' }}
           >
-            Let's Create Extraordinary<br />
-            <span className="text-[#C9A15D]">Spaces Together</span>
+            <span className="whitespace-nowrap">Let's Create Extraordinary</span>
+            <span className="text-[#C9A15D] whitespace-nowrap">Spaces Together</span>
           </h1>
           <div className="flex items-center gap-3 w-64 my-8">
             <div className="h-px bg-[#C9A15D]/60 flex-1" />
             <div className="w-2 h-2 bg-[#C9A15D] rotate-45 flex-shrink-0" />
             <div className="h-px bg-[#C9A15D]/60 flex-1" />
           </div>
-          <p className="font-sans text-[16px] text-[#e5e5e5] leading-relaxed max-w-lg">
-            We'd love to hear from you. Reach out to our team<br className="hidden sm:block" />
-            for bespoke interior solutions, product inquiries,<br className="hidden sm:block" />
-            or any assistance you need.
+          <p className="font-sans text-[16px] text-[#e5e5e5] leading-relaxed max-w-3xl lg:max-w-4xl">
+            We'd love to hear from you. Reach out to our team for bespoke interior solutions, product inquiries, or any assistance you need.
           </p>
         </div>
       </div>
@@ -52,52 +49,9 @@ function ContactHero() {
 }
 
 // ─── CONTACT FORM + INFO ──────────────────────────────────────────────────────
-function ContactForm() {
-  const [formData, setFormData] = useState({
-    name: '',
-    phone: '',
-    email: '',
-    subject: '',
-    message: '',
-  })
-  const [status, setStatus] = useState({ type: '', message: '' })
-  const [isSubmitting, setIsSubmitting] = useState(false)
-
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value })
-  }
-
-  const handleSubmit = async (e) => {
-    e.preventDefault()
-    setIsSubmitting(true)
-    setStatus({ type: '', message: '' })
-
-    try {
-      const response = await fetch('http://localhost:4005/api/contact', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      })
-
-      if (response.ok) {
-        setStatus({ type: 'success', message: 'Message sent successfully! We will get back to you soon.' })
-        setFormData({ name: '', phone: '', email: '', subject: '', message: '' })
-      } else {
-        const errorData = await response.json()
-        setStatus({ type: 'error', message: errorData.message || 'Failed to send message. Please try again.' })
-      }
-    } catch (error) {
-      console.error('Error submitting form:', error)
-      setStatus({ type: 'error', message: 'Network error. Please try again later.' })
-    } finally {
-      setIsSubmitting(false)
-    }
-  }
-
+function ContactSection() {
   return (
-    <section className="bg-[#0a0a0a] py-12 lg:py-20 border-b border-[#C9A15D]/50 relative">
+    <section id="contact-form" className="bg-[#0a0a0a] py-12 lg:py-20 border-b border-[#C9A15D]/50 relative">
       <div className="section-container relative">
         
         {/* Main Grid */}
@@ -171,63 +125,7 @@ function ContactForm() {
             <p className="eyebrow-label mb-10 flex items-center gap-4 text-[#C9A15D]">
               SEND US A MESSAGE <span className="inline-block w-8 h-px bg-[#C9A15D]" />
             </p>
-            <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <input
-                  type="text"
-                  name="name"
-                  placeholder="Your Name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  className="w-full bg-transparent border border-[#C9A15D]/40 text-[#e8e6e3] text-sm px-4 py-3 placeholder:text-[#888] focus:outline-none focus:border-[#C9A15D] transition-colors"
-                />
-                <input
-                  type="tel"
-                  name="phone"
-                  placeholder="Phone Number"
-                  value={formData.phone}
-                  onChange={handleChange}
-                  className="w-full bg-transparent border border-[#C9A15D]/40 text-[#e8e6e3] text-sm px-4 py-3 placeholder:text-[#888] focus:outline-none focus:border-[#C9A15D] transition-colors"
-                />
-              </div>
-              <input
-                type="email"
-                name="email"
-                placeholder="Email Address"
-                value={formData.email}
-                onChange={handleChange}
-                className="w-full bg-transparent border border-[#C9A15D]/40 text-[#e8e6e3] text-sm px-4 py-3 placeholder:text-[#888] focus:outline-none focus:border-[#C9A15D] transition-colors"
-              />
-              <input
-                type="text"
-                name="subject"
-                placeholder="Subject"
-                value={formData.subject}
-                onChange={handleChange}
-                className="w-full bg-transparent border border-[#C9A15D]/40 text-[#e8e6e3] text-sm px-4 py-3 placeholder:text-[#888] focus:outline-none focus:border-[#C9A15D] transition-colors"
-              />
-              <textarea
-                name="message"
-                placeholder="How can we help you?"
-                value={formData.message}
-                onChange={handleChange}
-                rows={4}
-                className="w-full bg-transparent border border-[#C9A15D]/40 text-[#e8e6e3] text-sm px-4 py-3 placeholder:text-[#888] focus:outline-none focus:border-[#C9A15D] transition-colors resize-none"
-              />
-              <button 
-                type="submit" 
-                disabled={isSubmitting}
-                className="bg-gradient-to-r from-[#D7AE5D] to-[#BE9648] hover:opacity-90 text-[#050505] text-xs font-semibold tracking-[0.1em] uppercase px-8 py-3 w-fit inline-flex items-center gap-2 transition-all mt-2 disabled:opacity-50"
-              >
-                {isSubmitting ? 'SENDING...' : 'SEND MESSAGE'} <ArrowRight size={14} strokeWidth={2} />
-              </button>
-              
-              {status.message && (
-                <div className={`mt-4 text-sm px-4 py-3 border ${status.type === 'success' ? 'bg-[#C9A15D]/10 border-[#C9A15D] text-[#C9A15D]' : 'bg-red-900/20 border-red-500/50 text-red-400'}`}>
-                  {status.message}
-                </div>
-              )}
-            </form>
+            <ContactForm />
           </div>
         </div>
       </div>
@@ -301,9 +199,9 @@ function MapSection() {
             and materials in person.
           </p>
           
-          <Link to="/contact" className="mt-4 border border-[#C9A15D]/40 text-[#C9A15D] hover:bg-[#C9A15D] hover:text-[#050505] text-[11.5px] font-semibold tracking-[0.15em] uppercase px-8 py-3.5 w-fit inline-flex items-center gap-3 transition-colors">
+          <button onClick={() => document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' })} className="mt-4 border border-[#C9A15D]/40 text-[#C9A15D] hover:bg-[#C9A15D] hover:text-[#050505] text-[11.5px] font-semibold tracking-[0.15em] uppercase px-8 py-3.5 w-fit inline-flex items-center gap-3 transition-colors">
             SCHEDULE A VISIT <ArrowRight size={14} />
-          </Link>
+          </button>
         </div>
       </div>
     </section>
@@ -315,7 +213,7 @@ export default function Contact() {
   return (
     <main>
       <ContactHero />
-      <ContactForm />
+      <ContactSection />
       <ContactFeatures />
       <MapSection />
     </main>

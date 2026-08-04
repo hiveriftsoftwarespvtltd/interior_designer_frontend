@@ -27,12 +27,17 @@ import prodIcon6 from '../assets/product/upholstery.png'
 import prodIcon7 from '../assets/product/customised_furniture.png'
 import prodIcon8 from '../assets/product/mattresses.png'
 
-import clientUdman from '../assets/home/prestigious _clients_udman_hotel.png'
-import clientAarone from '../assets/home/prestigious _clients_aarone.png'
-import clientEros from '../assets/home/prestigious _clients_eros_group.png'
-import clientIgi from '../assets/home/prestigious _clients_igi_airport.png'
-import clientSelect from '../assets/home/prestigious _clients_select_infra.png'
-import clientTivoli from '../assets/home/prestigious _clients_tivoli.png'
+import clientLogo1 from '../assets/home/udman hotel.svg'
+import clientLogo2 from '../assets/home/eros group.svg'
+import clientLogo3 from '../assets/home/select Group.svg'
+import clientLogo4 from '../assets/home/the tivoli.svg'
+import clientLogo5 from '../assets/home/lucky star.svg'
+import clientLogo6 from '../assets/home/bigjos.svg'
+import clientLogo7 from '../assets/home/Toeler.svg'
+import clientLogo8 from '../assets/home/TURNER.svg'
+import clientLogo9 from '../assets/home/Aarone.svg'
+import clientLogo10 from '../assets/home/delhi_indira.svg'
+import clientLogo11 from '../assets/home/fnp.svg'
 
 // ─── HERO ─────────────────────────────────────────────────────────────────────
 function AboutHero() {
@@ -48,22 +53,22 @@ function AboutHero() {
       </div>
       <div className="relative section-container pt-32 pb-12 min-h-[55vh] flex flex-col justify-center items-center text-center">
         <div className="max-w-2xl flex flex-col items-center">
-          <p className="text-[#C9A15D] text-[16px] font-bold tracking-[0.2em] uppercase mb-4">
-            About Infinity Luxe Spaces
+          <p className="text-[#C9A15D] text-[16px] font-bold tracking-[0.1em] uppercase mb-4">
+            About Us
           </p>
           <h1
             className="font-heading font-medium text-white leading-[1.2] tracking-wide"
             style={{ fontSize: 'clamp(32px, 6vw, 56px)' }}
           >
-            Crafting Spaces That Reflect Your Identity
+            About Infinity Luxe <br /><span className='text-[#C9A15D]'>Spaces</span>
           </h1>
           <div className="flex items-center gap-3 w-64 my-8">
             <div className="h-px bg-[#C9A15D]/60 flex-1" />
             <div className="w-2 h-2 bg-[#C9A15D] rotate-45 flex-shrink-0" />
             <div className="h-px bg-[#C9A15D]/60 flex-1" />
           </div>
-          <p className="font-sans text-[16px] text-[#e5e5e5] leading-relaxed max-w-lg">
-            Luxury is not merely what you see — it is what you experience every day. At Infinity Luxe Spaces, we transform residential, commercial, and hospitality environments into timeless spaces through bespoke furnishings, curated materials, and exceptional craftsmanship.
+          <p className="font-sans text-[16px] text-[#e5e5e5] leading-relaxed max-w-3xl lg:max-w-4xl">
+            Creating bespoke interiors where timeless craftsmanship, curated materials, and refined design come together to shape spaces that truly reflect your identity.
           </p>
         </div>
       </div>
@@ -84,10 +89,10 @@ function OurStory() {
             />
             <div className="flex flex-col gap-4 mt-2">
               <p className="font-sans text-[16px] text-text-paragraph leading-relaxed">
-                Infinity Luxe Spaces was founded with a vision to redefine luxury interiors through personalized design solutions and premium furnishing experiences.
+                At Infinity Luxe Spaces, we believe every space should be a true reflection of the people who live and work within it. We specialize in bespoke interiors and premium furnishing solutions that seamlessly blend timeless elegance, functionality, and exceptional craftsmanship.
               </p>
               <p className="font-sans text-[16px] text-text-paragraph leading-relaxed">
-                By combining design intelligence, global material sourcing, and precision execution, we create environments that feel sophisticated, welcoming, and uniquely yours.
+                Driven by 25+ years of combined leadership expertise, we combine innovative design thinking, curated global materials, and precision execution to create refined residential, commercial, and hospitality environments. Every project is thoughtfully crafted to deliver enduring quality, sophisticated aesthetics, and a personalized experience that feels uniquely yours.
               </p>
             </div>
           </div>
@@ -327,12 +332,17 @@ function Leadership() {
 
 // ─── CLIENTS ─────────────────────────────────────────────────────────────────
 const clientLogos = [
-  clientUdman,
-  clientAarone,
-  clientEros,
-  clientIgi,
-  clientSelect,
-  clientTivoli,
+  clientLogo1,
+  clientLogo2,
+  clientLogo3,
+  clientLogo4,
+  clientLogo5,
+  clientLogo6,
+  clientLogo7,
+  clientLogo8,
+  clientLogo9,
+  clientLogo10,
+  clientLogo11,
 ]
 
 function AboutClients() {
@@ -342,30 +352,21 @@ function AboutClients() {
         <p className="text-[#C9A15D] text-[10px] tracking-wider uppercase mb-4 text-center font-semibold">Trusted by Industry Leaders</p>
         <h2 className="font-heading text-3xl font-semibold text-text-heading text-center mb-10">Our Prestigious Clients</h2>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 mt-8">
-          {clientLogos.map((logo, i) => (
-            <div
-              key={i}
-              className="flex items-center justify-center group cursor-pointer"
-              style={{ height: '100px' }}
-            >
-              <div className="w-full h-full transition-transform duration-500 group-hover:scale-110 group-hover:-translate-y-1">
-                <div
-                  className="w-full h-full scale-[2.2] bg-[#C9A15D] opacity-80 group-hover:opacity-100 transition-opacity duration-500 flex-shrink-0 pointer-events-none"
-                  style={{
-                    WebkitMaskImage: `url(${logo})`,
-                    maskImage: `url(${logo})`,
-                    WebkitMaskSize: 'contain',
-                    maskSize: 'contain',
-                    WebkitMaskPosition: 'center',
-                    maskPosition: 'center',
-                    WebkitMaskRepeat: 'no-repeat',
-                    maskRepeat: 'no-repeat',
-                  }}
+        <div className="clients-marquee-wrapper mt-12 mb-8">
+          <div className="clients-marquee-track gap-10 lg:gap-16">
+            {[...clientLogos, ...clientLogos].map((logo, i) => (
+              <div
+                key={i}
+                className="flex items-center justify-center flex-shrink-0"
+              >
+                <img 
+                  src={logo} 
+                  alt="Client Logo" 
+                  className="h-[80px] md:h-[110px] w-auto max-w-none object-contain transition-all duration-500 opacity-80 hover:opacity-100 hover:scale-110 cursor-pointer" 
                 />
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>
@@ -434,8 +435,6 @@ export default function About() {
       <Philosophy />
       <SectionDivider />
       <InfinityStandard />
-      <SectionDivider />
-      <Expertise />
       <SectionDivider />
       <Leadership />
       <SectionDivider />

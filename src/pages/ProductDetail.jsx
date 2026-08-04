@@ -1,6 +1,7 @@
 import { useParams, Link, Navigate } from 'react-router-dom'
 import { ArrowRight, ChevronLeft, CheckCircle2 } from 'lucide-react'
 import { productsData } from '../data/productsData'
+import { useModal } from '../context/ModalContext'
 
 function SectionDivider() {
   return (
@@ -11,6 +12,7 @@ function SectionDivider() {
 export default function ProductDetail() {
   const { slug } = useParams()
   const product = productsData[slug]
+  const { openContactModal } = useModal()
 
   if (!product) {
     return <Navigate to="/products" replace />
@@ -32,19 +34,19 @@ export default function ProductDetail() {
         <div className="relative z-10 section-container pt-20 pb-12 min-h-[45vh] flex flex-col justify-center items-center text-center">
           <Link
             to="/products"
-            className="absolute top-6 sm:top-10 left-4 sm:left-6 lg:left-14 inline-flex items-center gap-2 text-[#C9A15D] text-[10px] sm:text-[12px] font-bold tracking-widest uppercase hover:-translate-x-1 transition-transform"
+            className="absolute top-6 sm:top-10 left-4 sm:left-6 lg:left-14 inline-flex items-center gap-2 text-white text-[10px] sm:text-[12px] font-bold tracking-widest uppercase hover:-translate-x-1 transition-transform"
           >
             <ChevronLeft size={16} /> Back to Products
           </Link>
           
           <div className="max-w-3xl flex flex-col items-center mt-4 sm:mt-0">
-            <p className="text-[#C9A15D] text-[12px] sm:text-[14px] lg:text-[16px] font-bold tracking-[0.2em] uppercase mb-4 flex items-center gap-2 sm:gap-3 justify-center">
+            <p className="text-[#C9A15D] text-[12px] sm:text-[14px] lg:text-[16px] font-bold tracking-[0.1em] uppercase mb-4 flex items-center gap-2 sm:gap-3 justify-center">
               {product.subtitle}
             </p>
             
             <h1 
               className="font-heading font-medium text-white leading-[1.2] tracking-wide whitespace-pre-line px-4"
-              style={{ fontSize: 'clamp(28px, 6vw, 56px)' }}
+              style={{ fontSize: 'clamp(28px, 6vw, 56px)',color:"#f0e8d4ff" }}
             >
               {product.title}
             </h1>
@@ -83,10 +85,10 @@ export default function ProductDetail() {
           {/* Right: Text & Details */}
           <div className="flex flex-col">
             <h2 
-              className="font-heading font-semibold text-text-heading leading-tight mb-8"
+              className="font-heading font-semibold text-[#C9A15D] leading-tight mb-8"
               style={{ fontSize: 'clamp(28px, 4vw, 42px)' }}
             >
-              Unparalleled <span className="text-[#C9A15D]">Excellence</span>
+              {product.heading || product.title.replace('\n', ' ')}
             </h2>
             
             <p className="font-sans text-[15px] lg:text-[16px] text-text-paragraph leading-relaxed mb-6">
@@ -116,13 +118,13 @@ export default function ProductDetail() {
             </div>
 
             <div className="pt-8 border-t border-[#C9A15D]/20">
-              <Link
-                to="/contact"
+              <button
+                onClick={openContactModal}
                 className="inline-flex items-center gap-3 font-sans font-bold text-[12px] tracking-widest uppercase px-8 py-4 transition-all duration-300 hover:opacity-90 w-full sm:w-auto justify-center"
                 style={{ background: 'linear-gradient(90deg, #E6C78A 0%, #C9A15D 100%)', color: '#050505' }}
               >
                 Inquire About Collection <ArrowRight size={16} />
-              </Link>
+              </button>
             </div>
           </div>
         </div>

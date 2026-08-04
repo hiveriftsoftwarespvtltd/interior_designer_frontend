@@ -48,7 +48,7 @@ function ProductsHero() {
       </div>
       <div className="relative section-container pt-28 pb-12 min-h-[45vh] flex flex-col justify-center items-center text-center">
         <div className="max-w-2xl flex flex-col items-center">
-          <p className="text-[#C9A15D] text-[16px] font-bold tracking-[0.2em] uppercase mb-4">
+          <p className="text-[#C9A15D] text-[16px] font-bold tracking-[0.1em] uppercase mb-4">
             Our Products
           </p>
           <h1
@@ -63,7 +63,7 @@ function ProductsHero() {
             <div className="w-2 h-2 bg-[#C9A15D] rotate-45 flex-shrink-0" />
             <div className="h-px bg-[#C9A15D]/60 flex-1" />
           </div>
-          <p className="font-sans text-[16px] text-[#e5e5e5] leading-relaxed max-w-lg">
+          <p className="font-sans text-[16px] text-[#e5e5e5] leading-relaxed max-w-3xl lg:max-w-4xl">
             Explore our exclusive range of premium furnishings and materials, chosen for their quality, elegance, and timeless appeal.
           </p>
         </div>
@@ -75,49 +75,49 @@ function ProductsHero() {
 // ─── CATEGORY GRID ────────────────────────────────────────────────────────────
 const categories = [
   {
-    label: 'Customised\nCurtains & Drapes',
+    label: 'Curtains',
     img: catImg1,
     icon: prodIcon1,
     slug: 'curtains-drapes'
   },
   {
-    label: 'Premium\nBlinds',
+    label: 'Blinds',
     img: catImg2,
     icon: prodIcon2,
     slug: 'premium-blinds'
   },
   {
-    label: 'Exclusive\nWallpapers',
+    label: 'Wallpapers',
     img: catImg3,
     icon: prodIcon3,
     slug: 'exclusive-wallpapers'
   },
   {
-    label: 'Wooden\nFlooring',
+    label: 'Wooden Flooring',
     img: catImg4,
     icon: prodIcon4,
     slug: 'wooden-flooring'
   },
   {
-    label: 'Carpets &\nRugs',
+    label: 'Carpets',
     img: catImg5,
     icon: prodIcon5,
     slug: 'carpets-rugs'
   },
   {
-    label: 'Upholstery &\nLeatherettes',
+    label: 'Upholstery',
     img: catImg6,
     icon: prodIcon6,
     slug: 'upholstery-leatherettes'
   },
   {
-    label: 'Customised\nFurniture',
+    label: 'Furniture',
     img: catImg7,
     icon: prodIcon7,
     slug: 'customised-furniture'
   },
   {
-    label: 'Mattresses &\nSleep Solutions',
+    label: 'Mattresses',
     img: catImg8,
     icon: prodIcon8,
     slug: 'mattresses-sleep'

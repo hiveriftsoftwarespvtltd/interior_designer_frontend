@@ -9,12 +9,17 @@ import statIcon2 from '../assets/client/residential.png'
 import statIcon3 from '../assets/client/Long-Term.png'
 import statIcon4 from '../assets/client/Client-Centric.png'
 
-import clientLogo1 from '../assets/home/prestigious _clients_aarone.png'
-import clientLogo2 from '../assets/home/prestigious _clients_select_infra.png'
-import clientLogo3 from '../assets/home/prestigious _clients_eros_group.png'
-import clientLogo4 from '../assets/home/prestigious _clients_udman_hotel.png'
-import clientLogo5 from '../assets/home/prestigious _clients_tivoli.png'
-import clientLogo6 from '../assets/home/prestigious _clients_igi_airport.png'
+import clientLogo1 from '../assets/home/udman hotel.svg'
+import clientLogo2 from '../assets/home/eros group.svg'
+import clientLogo3 from '../assets/home/select Group.svg'
+import clientLogo4 from '../assets/home/the tivoli.svg'
+import clientLogo5 from '../assets/home/lucky star.svg'
+import clientLogo6 from '../assets/home/bigjos.svg'
+import clientLogo7 from '../assets/home/Toeler.svg'
+import clientLogo8 from '../assets/home/TURNER.svg'
+import clientLogo9 from '../assets/home/Aarone.svg'
+import clientLogo10 from '../assets/home/delhi_indira.svg'
+import clientLogo11 from '../assets/home/fnp.svg'
 import testimonialsBg from '../assets/client/testimonials.png'
 import letsCreateBg from "../assets/client/let's_create.png"
 
@@ -32,10 +37,10 @@ function ClientsHero() {
       </div>
       <div className="relative section-container pt-28 pb-12 min-h-[45vh] flex flex-col justify-center items-center text-center">
         <div className="max-w-3xl flex flex-col items-center">
-          <p className="text-[#C9A15D] text-[16px] font-bold tracking-[0.2em] uppercase mb-4 flex items-center gap-2 justify-center">
-            Our Clients 
+          <p className="text-[#C9A15D] text-[16px] font-bold tracking-[0.1em] uppercase mb-4 flex items-center gap-2 justify-center">
+            Our Clients
           </p>
-          <h1 
+          <h1
             className="font-heading font-medium text-white leading-[1.2] tracking-wide"
             style={{ fontSize: 'clamp(32px, 6vw, 56px)' }}
           >
@@ -46,7 +51,7 @@ function ClientsHero() {
             <div className="w-2 h-2 bg-[#C9A15D] rotate-45 flex-shrink-0" />
             <div className="h-px bg-[#C9A15D]/60 flex-1" />
           </div>
-          <p className="font-sans text-[16px] text-[#e5e5e5] leading-relaxed max-w-lg">
+          <p className="font-sans text-[16px] text-[#e5e5e5] leading-relaxed max-w-3xl lg:max-w-4xl">
             We are proud to collaborate with visionary brands and prestigious names across industries. Together, we create extraordinary spaces that leave a lasting impression.
           </p>
         </div>
@@ -93,6 +98,11 @@ const clientsData = [
   clientLogo4,
   clientLogo5,
   clientLogo6,
+  clientLogo7,
+  clientLogo8,
+  clientLogo9,
+  clientLogo10,
+  clientLogo11,
 ]
 
 function ClientLogos() {
@@ -113,15 +123,21 @@ function ClientLogos() {
           </div>
         </div>
 
-        <div className="grid grid-cols-2 lg:grid-cols-3 gap-2 mt-12">
-          {clientsData.map((logo, i) => (
-            <div
-              key={i}
-              className="relative border border-[#C9A15D]/20 py-5 px-4 flex flex-col items-center justify-center hover:border-[#C9A15D]/50 hover:bg-[#0a0a0a] transition-all duration-300 min-h-[110px] overflow-hidden group cursor-pointer"
-            >
-              <img src={logo} alt="Client Logo" className="absolute w-[180px] md:w-[260px] max-w-none object-contain transition-transform duration-300 group-hover:scale-110" />
-            </div>
-          ))}
+        <div className="clients-marquee-wrapper mt-12 mb-8">
+          <div className="clients-marquee-track gap-10 lg:gap-16">
+            {[...clientsData, ...clientsData].map((logo, i) => (
+              <div
+                key={i}
+                className="flex items-center justify-center flex-shrink-0"
+              >
+                <img 
+                  src={logo} 
+                  alt="Client Logo" 
+                  className="h-[80px] md:h-[110px] w-auto max-w-none object-contain transition-all duration-500 opacity-80 hover:opacity-100 hover:scale-110 cursor-pointer" 
+                />
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
@@ -212,7 +228,7 @@ function Testimonials() {
           {/* Right Column Scrolling Text */}
           <div className="flex flex-col justify-center py-16 px-6 lg:py-24 lg:px-16 overflow-hidden">
             <div className="w-full overflow-hidden">
-              <div 
+              <div
                 className={`flex ${isTransitioning ? 'transition-transform duration-700 ease-in-out' : ''}`}
                 style={{ transform: `translateX(-${current * 100}%)` }}
                 onTransitionEnd={handleTransitionEnd}
@@ -243,9 +259,8 @@ function Testimonials() {
                     setIsTransitioning(true)
                     setCurrent(i)
                   }}
-                  className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                    i === (current % testimonials.length) ? 'bg-[#C9A15D]' : 'bg-[#333333] hover:bg-[#C9A15D]/50'
-                  }`}
+                  className={`w-2 h-2 rounded-full transition-all duration-300 ${i === (current % testimonials.length) ? 'bg-[#C9A15D]' : 'bg-[#333333] hover:bg-[#C9A15D]/50'
+                    }`}
                 />
               ))}
             </div>
@@ -295,8 +310,8 @@ function ClientsCta() {
 
           {/* Right Side (Button) */}
           <div className="flex-shrink-0 lg:pr-24">
-            <Link 
-              to="/contact" 
+            <Link
+              to="/contact"
               className="inline-flex items-center gap-3 border border-[#C9A15D] text-[#C9A15D] px-8 py-3 text-sm font-semibold tracking-[0.1em] uppercase hover:bg-[#C9A15D] hover:text-[#050505] transition-all group"
             >
               START YOUR PROJECT <ArrowRight size={16} className="transition-transform duration-300 group-hover:translate-x-1" />
