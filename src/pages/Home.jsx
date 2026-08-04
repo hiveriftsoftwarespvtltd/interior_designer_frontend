@@ -604,12 +604,12 @@ function ClientsStrip() {
             {[...clientLogos, ...clientLogos].map((logo, i) => (
               <div
                 key={i}
-                className="flex items-center justify-center flex-shrink-0"
+                className="flex items-center justify-center flex-shrink-0 px-6 md:px-12"
               >
                 <img 
                   src={logo} 
                   alt="Client Logo" 
-                  className="h-[80px] md:h-[110px] w-auto max-w-none object-contain transition-all duration-500 opacity-80 hover:opacity-100 hover:scale-110 cursor-pointer" 
+                  className="h-[80px] md:h-[110px] w-auto max-w-none object-contain scale-[1.5] md:scale-[1.8] transition-all duration-500 opacity-80 hover:opacity-100 hover:scale-[1.7] md:hover:scale-[2] cursor-pointer" 
                 />
               </div>
             ))}
